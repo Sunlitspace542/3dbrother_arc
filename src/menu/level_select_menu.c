@@ -150,17 +150,22 @@ s32 intro_default(void) {
 #endif
     print_intro_text();
 
+
     if (gPlayer1Controller->buttonPressed & START_BUTTON) {
         play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
-#ifdef VERSION_SH
-        queue_rumble_data(60, 70);
-        func_sh_8024C89C(1);
-#endif
-        sp1C = 100 + gDebugLevelSelect;
-#ifndef VERSION_JP
-        D_U_801A7C34 = 1;
-#endif
+ #ifdef VERSION_SH
+         queue_rumble_data(60, 70);
+         func_sh_8024C89C(1);
+ #endif
+         sp1C = 100 + gDebugLevelSelect;
+ #ifndef VERSION_JP
+         D_U_801A7C34 = 1;
+ #endif
     }
+    else if ((gPlayer1Controller->buttonPressed & L_TRIG) && (gPlayer1Controller->buttonPressed & R_TRIG)) {
+        gDebugLevelSelect = TRUE; // enable debug ls and play sound
+        play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, gGlobalSoundSource);
+    } if (gDebugLevelSelect) print_text_centered(160, 80, "SELECT STAGE ON");
     return run_press_start_demo_timer(sp1C);
 }
 
@@ -178,15 +183,19 @@ s32 intro_game_over(void) {
 
     if (gPlayer1Controller->buttonPressed & START_BUTTON) {
         play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
-#ifdef VERSION_SH
-        queue_rumble_data(60, 70);
-        func_sh_8024C89C(1);
-#endif
-        sp1C = 100 + gDebugLevelSelect;
-#ifndef VERSION_JP
-        gameOverNotPlayed = 1;
-#endif
+ #ifdef VERSION_SH
+         queue_rumble_data(60, 70);
+         func_sh_8024C89C(1);
+ #endif
+         sp1C = 100 + gDebugLevelSelect;
+ #ifndef VERSION_JP
+         gameOverNotPlayed = 1;
+ #endif
     }
+    else if ((gPlayer1Controller->buttonPressed & L_TRIG) && (gPlayer1Controller->buttonPressed & R_TRIG)) {
+        gDebugLevelSelect = TRUE; // enable debug ls and play sound
+        play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, gGlobalSoundSource);
+    } if (gDebugLevelSelect) print_text_centered(160, 80, "SELECT STAGE ON");
     return run_press_start_demo_timer(sp1C);
 }
 

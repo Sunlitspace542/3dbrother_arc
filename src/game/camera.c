@@ -1663,8 +1663,12 @@ s16 unused8032D0B0[] = { 16, 9, 17, 0 };
  * Only the first 5 entries are used. Perhaps the last 5 were bools used to indicate whether the star
  * type exits the course or not.
  */
-u8 sDanceCutsceneTable[] = {
+/*u8 sDanceCutsceneTable[] = {
     CUTSCENE_DANCE_FLY_AWAY, CUTSCENE_DANCE_ROTATE, CUTSCENE_DANCE_CLOSEUP, CUTSCENE_KEY_DANCE, CUTSCENE_DANCE_DEFAULT,
+    FALSE,                   FALSE,                 FALSE,                  FALSE,              TRUE,
+};*/
+u8 sDanceCutsceneTable[] = {
+    CUTSCENE_DANCE_DEFAULT, CUTSCENE_DANCE_DEFAULT, CUTSCENE_DANCE_DEFAULT, CUTSCENE_DANCE_DEFAULT, CUTSCENE_DANCE_DEFAULT,
     FALSE,                   FALSE,                 FALSE,                  FALSE,              TRUE,
 };
 
@@ -2247,12 +2251,13 @@ s16 update_default_camera(struct Camera *c) {
     c->focus[1] = sMarioCamState->pos[1] + 125.f + focHeight;
     c->focus[2] = sMarioCamState->pos[2];
 
-    marioFloorHeight = 125.f + sMarioGeometry.currFloorHeight;
+    //replacing all 125.f with 30.f = beta camera
+    marioFloorHeight = 35.f + sMarioGeometry.currFloorHeight;
     marioFloor = sMarioGeometry.currFloor;
-    camFloorHeight = find_floor(cPos[0], cPos[1] + 50.f, cPos[2], &cFloor) + 125.f;
+    camFloorHeight = find_floor(cPos[0], cPos[1] + 50.f, cPos[2], &cFloor) + 35.f;
     for (scale = 0.1f; scale < 1.f; scale += 0.2f) {
         scale_along_line(tempPos, cPos, sMarioCamState->pos, scale);
-        tempFloorHeight = find_floor(tempPos[0], tempPos[1], tempPos[2], &tempFloor) + 125.f;
+        tempFloorHeight = find_floor(tempPos[0], tempPos[1], tempPos[2], &tempFloor) + 35.f;
         if (tempFloor != NULL && tempFloorHeight > marioFloorHeight) {
             marioFloorHeight = tempFloorHeight;
             marioFloor = tempFloor;
@@ -2262,7 +2267,7 @@ s16 update_default_camera(struct Camera *c) {
     // Lower the camera in Mario mode
     if (sSelectionFlags & CAM_MODE_MARIO_ACTIVE) {
         marioFloorHeight -= 35.f;
-        camFloorHeight -= 35.f;
+        camFloorHeight -= 30.f; // 35.f
         c->focus[1] -= 25.f;
     }
 
@@ -10255,6 +10260,7 @@ BAD_RETURN(s32) cutscene_door_start(struct Camera *c) {
  * Fix the camera in place while the door opens.
  */
 BAD_RETURN(s32) cutscene_door_fix_cam(struct Camera *c) {
+    set_fov_function(CAM_FOV_APP_30);
     vec3f_copy(c->pos, sCutsceneVars[0].point);
     vec3f_copy(c->focus, sCutsceneVars[1].point);
 }
@@ -10277,16 +10283,18 @@ BAD_RETURN(s32) cutscene_door_move_behind_mario(struct Camera *c) {
     Vec3f camOffset;
     s16 doorRotation;
 
-    reset_pan_distance(c);
+    //reset_pan_distance(c);
+    set_fov_function(CAM_FOV_SET_45);
     determine_pushing_or_pulling_door(&doorRotation);
     set_focus_rel_mario(c, 0.f, 125.f, 0.f, 0);
     vec3s_set(sCutsceneVars[0].angle, 0, sMarioCamState->faceAngle[1] + doorRotation, 0);
-    vec3f_set(camOffset, 0.f, 125.f, 250.f);
+    vec3f_set(camOffset, 0.f, 40.f, 200.f);
+    //vec3f_set(camOffset, 0.f, 125.f, 250.f);
 
     if (doorRotation == 0) { //! useless code
-        camOffset[0] = 0.f;
+        camOffset[0] = -65.0f;
     } else {
-        camOffset[0] = 0.f;
+        camOffset[0] = -65.0f;
     }
 
     offset_rotated(c->pos, sMarioCamState->pos, camOffset, sCutsceneVars[0].angle);

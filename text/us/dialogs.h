@@ -388,18 +388,18 @@ around while flying, and\n\
 press [Z] to land."))
 
 DEFINE_DIALOG(DIALOG_033, 1, 6, 30, 200, _("\
-Ciao! You've reached\n\
-Princess Toadstool's\n\
-castle via a warp pipe.\n\
-Using the controller is a\n\
-piece of cake. Press [A] to\n\
-jump and [B] to attack.\n\
-Press [B] to read signs,\n\
-too. Use the Control Stick\n\
+Welcome to\n\
+Mario Wonderland!\n\
+Feeling adventurous?\n\
+if so, please pay a visit\n\
+to the castle ahead.\n\
+\n\
+Press [A] to jump\n\
+and [B] to attack.\n\
+Use the Control Stick\n\
 in the center of the\n\
 controller to move Mario\n\
-around. Now, head for\n\
-the castle."))
+around."))
 
 DEFINE_DIALOG(DIALOG_034, 1, 6, 30, 200, _("\
 Good afternoon. The\n\

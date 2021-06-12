@@ -44,7 +44,7 @@ Gfx *geo_intro_super_mario_64_logo(s32 state, struct GraphNode *node, UNUSED voi
     Gfx *dl = NULL;
     Gfx *dlIter = NULL;
     Mtx *scaleMat;
-    f32 *scaleTable1 = segmented_to_virtual(intro_seg7_table_0700C790);
+    //f32 *scaleTable1 = segmented_to_virtual(intro_seg7_table_0700C790);
     f32 *scaleTable2 = segmented_to_virtual(intro_seg7_table_0700C880);
     f32 scaleX;
     f32 scaleY;
@@ -61,10 +61,10 @@ Gfx *geo_intro_super_mario_64_logo(s32 state, struct GraphNode *node, UNUSED voi
         // determine scale based on the frame counter
         if (sIntroFrameCounter >= 0 && sIntroFrameCounter < INTRO_STEPS_ZOOM_IN) {
             // zooming in
-            scaleX = scaleTable1[sIntroFrameCounter * 3];
-            scaleY = scaleTable1[sIntroFrameCounter * 3 + 1];
-            scaleZ = scaleTable1[sIntroFrameCounter * 3 + 2];
-        } else if (sIntroFrameCounter >= INTRO_STEPS_ZOOM_IN && sIntroFrameCounter < INTRO_STEPS_HOLD_1) {
+            // scaleX = scaleTable1[sIntroFrameCounter * 3];
+            // scaleY = scaleTable1[sIntroFrameCounter * 3 + 1];
+            // scaleZ = scaleTable1[sIntroFrameCounter * 3 + 2];
+        } else if (sIntroFrameCounter >= INTRO_STEPS_ZOOM_IN) {
             // holding
             scaleX = 1.0f;
             scaleY = 1.0f;
@@ -121,12 +121,12 @@ Gfx *geo_intro_tm_copyright(s32 state, struct GraphNode *node, UNUSED void *cont
         gSPEndDisplayList(dlIter);
 
         // Once the "Super Mario 64" logo has just about zoomed fully, fade in the "TM" and copyright text
-        if (sIntroFrameCounter >= 19) {
+        /*if (sIntroFrameCounter >= 19) {
             sTmCopyrightAlpha += 26;
             if (sTmCopyrightAlpha > 255) {
                 sTmCopyrightAlpha = 255;
             }
-        }
+        }*/
     }
     return dl;
 }
@@ -251,8 +251,7 @@ Gfx *geo_intro_gameover_backdrop(s32 state, struct GraphNode *node, UNUSED void 
                 static s8 flipOrder[] = { 0, 1, 2, 3, 7, 11, 10, 9, 8, 4, 5, 6 };
 
                 sGameOverTableIndex++;
-                gameOverBackgroundTable[flipOrder[sGameOverTableIndex]] =
-                    INTRO_BACKGROUND_SUPER_MARIO;
+                gameOverBackgroundTable[flipOrder[sGameOverTableIndex]] = INTRO_BACKGROUND_SUPER_MARIO;
             }
         }
         if (sGameOverTableIndex != 11) {

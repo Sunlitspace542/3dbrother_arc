@@ -388,9 +388,9 @@ Gfx *geo_mario_tilt_torso(s32 callContext, struct GraphNode *node, UNUSED Mat4 *
             && action != ACT_RIDING_SHELL_GROUND) {
             vec3s_copy(bodyState->torsoAngle, gVec3sZero);
         }
-        rotNode->rotation[0] = bodyState->torsoAngle[1];
+        /*rotNode->rotation[0] = bodyState->torsoAngle[1];
         rotNode->rotation[1] = bodyState->torsoAngle[2];
-        rotNode->rotation[2] = bodyState->torsoAngle[0];
+        rotNode->rotation[2] = bodyState->torsoAngle[0];*/
     }
     return NULL;
 }
@@ -465,12 +465,10 @@ Gfx *geo_mario_hand_foot_scaler(s32 callContext, struct GraphNode *node, UNUSED 
         scaleNode->scale = 1.0f;
         if (asGenerated->parameter == bodyState->punchState >> 6) {
             if (sMarioAttackAnimCounter != gAreaUpdateCounter && (bodyState->punchState & 0x3F) > 0) {
-                bodyState->punchState -= 1;
+                //bodyState->punchState -= 1;
                 sMarioAttackAnimCounter = gAreaUpdateCounter;
             }
-            scaleNode->scale =
-                gMarioAttackScaleAnimation[asGenerated->parameter * 6 + (bodyState->punchState & 0x3F)]
-                / 10.0f;
+            //scaleNode->scale = gMarioAttackScaleAnimation[asGenerated->parameter * 6 + (bodyState->punchState & 0x3F)] / 10.0f;
         }
     }
     return NULL;

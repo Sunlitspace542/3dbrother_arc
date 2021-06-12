@@ -113,14 +113,15 @@ void print_intro_text(void) {
 #ifdef VERSION_EU
             print_text_centered(SCREEN_WIDTH / 2, 20, gNoControllerMsg[language]);
 #else
-            print_text_centered(SCREEN_WIDTH / 2, 20, "NO CONTROLLER");
+            print_text_centered(72, 48, "PLAYER 1");
+            print_text_centered(72, 30, "NO INPUT");
 #endif
         } else {
 #ifdef VERSION_EU
             print_text(20, 20, "START");
 #else
-            print_text_centered(60, 38, "PRESS");
-            print_text_centered(60, 20, "START");
+            print_text_centered(62, 48, "PRESS");
+            print_text_centered(62, 30, "START");
 #endif
         }
     }

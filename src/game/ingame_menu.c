@@ -111,6 +111,52 @@ u8 gMenuHoldKeyIndex = 0;
 u8 gMenuHoldKeyTimer = 0;
 s32 gDialogResponse = 0;
 
+// An array of stages to warp to, starts with 0 meaning "continue" or "quit".
+int g_stagesToWarpTo[] = {
+	0,
+	LEVEL_WF,
+	LEVEL_LLL,
+	LEVEL_CCM,
+	LEVEL_DDD,
+	LEVEL_BOWSER_1,
+	0,
+};
+void OnPauseDialogEnd(int choice) {
+	// play the pause sound
+    play_sound(SOUND_MENU_PAUSE, gGlobalSoundSource);
+	// did we use the EXIT COURSE option?
+	if (choice == 1)
+	{
+		// yes, just warp us to castle
+        initiate_warp(/*Level ID*/LEVEL_CASTLE, /*Area Num*/1, /*Warp Node*/0x1F, 0);
+        fade_into_special_warp(0, 0);
+        gSavedCourseNum = 0;
+	}
+}
+void OnStageSelectDialogEnd(int choice) {
+	//check if we have a stage to warp to here
+	if (g_stagesToWarpTo[choice] == 0) {
+		// no, unpause
+		play_sound(SOUND_MENU_PAUSE, gGlobalSoundSource);
+		if (choice != 0) // check for continue option
+		{
+			// we have clicked EXIT to title, reset game
+			save_file_reload(); fade_into_special_warp(-4, 0);
+		}
+		return;
+	}
+	// otherwise, warp to the stage in the array
+	else 
+	{
+		initiate_warp(
+			g_stagesToWarpTo[choice],// level ID
+			1,                       // area number
+			0xA,                     // entry warp node
+			0); // last parameter should be zero
+		fade_into_special_warp(-9, 1);
+		gSavedCourseNum = 0;
+	}
+}
 
 void create_dl_identity_matrix(void) {
     Mtx *matrix = (Mtx *) alloc_display_list(sizeof(Mtx));
@@ -2623,8 +2669,8 @@ s16 render_pause_courses_and_castle(void) {
             }
             break;
         case DIALOG_STATE_VERTICAL:
-            shade_screen();
-            render_pause_my_score_coins();
+            //shade_screen();
+            //render_pause_my_score_coins();
             render_pause_red_coins();
 
             if (gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) {
@@ -2653,10 +2699,10 @@ s16 render_pause_courses_and_castle(void) {
             }
             break;
         case DIALOG_STATE_HORIZONTAL:
-            shade_screen();
-            print_hud_pause_colorful_str();
-            render_pause_castle_menu_box(160, 143);
-            render_pause_castle_main_strings(104, 60);
+            // shade_screen();
+            // print_hud_pause_colorful_str();
+            // render_pause_castle_menu_box(160, 143);
+            // render_pause_castle_main_strings(104, 60);
 
 #ifdef VERSION_EU
             if (gPlayer3Controller->buttonPressed & (A_BUTTON | Z_TRIG | START_BUTTON))

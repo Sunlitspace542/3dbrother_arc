@@ -787,11 +787,11 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
             m->forwardVel *= 0.8f;
             break;
 
-        case ACT_BACKFLIP:
+        /*case ACT_BACKFLIP:
             m->marioObj->header.gfx.animInfo.animID = -1;
             m->forwardVel = -16.0f;
             set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.0f);
-            break;
+            break;*/
 
         case ACT_TRIPLE_JUMP:
             set_mario_y_vel_based_on_fspeed(m, 69.0f, 0.0f);
@@ -821,7 +821,7 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
         case ACT_JUMP:
         case ACT_HOLD_JUMP:
             m->marioObj->header.gfx.animInfo.animID = -1;
-            set_mario_y_vel_based_on_fspeed(m, 42.0f, 0.25f);
+            set_mario_y_vel_based_on_fspeed(m, 40.0f, 0.25f);
             m->forwardVel *= 0.8f;
             break;
 
@@ -835,7 +835,7 @@ static u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actio
             break;
 
         case ACT_SIDE_FLIP:
-            set_mario_y_vel_based_on_fspeed(m, 62.0f, 0.0f);
+            set_mario_y_vel_based_on_fspeed(m, 45.0f, 0.0f); // 62.f
             m->forwardVel = 8.0f;
             m->faceAngle[1] = m->intendedYaw;
             break;
@@ -1488,6 +1488,10 @@ void update_mario_health(struct MarioState *m) {
         if (m->health > 0x880) {
             m->health = 0x880;
         }
+        //if mario isn't underwater and his life is below 8 tacs, regenerate health periodically
+        if ((m->action & ACT_GROUP_MASK) != ACT_GROUP_SUBMERGED && m->health < 0x800) {
+            m->health += 0x1;
+        }
         if (m->health < 0x100) {
             m->health = 0xFF;
         }
@@ -1882,7 +1886,7 @@ void init_mario_from_save_file(void) {
         save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1);
     gMarioState->numKeys = 0;
 
-    gMarioState->numLives = 4;
+    gMarioState->numLives = 2;
     gMarioState->health = 0x880;
 
     gMarioState->prevNumStarsForDialog = gMarioState->numStars;

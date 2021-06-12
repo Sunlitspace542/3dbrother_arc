@@ -506,11 +506,12 @@ s32 begin_braking_action(struct MarioState *m) {
         return set_mario_action(m, ACT_STANDING_AGAINST_WALL, 0);
     }
 
-    if (m->forwardVel >= 16.0f && m->floor->normal.y >= 0.17364818f) {
+    if (m->forwardVel >= 28.0f && m->floor->normal.y >= 0.284f) {  // m->forwardVel >= 16.0f && m->floor->normal.y >= 0.17364818f
         return set_mario_action(m, ACT_BRAKING, 0);
     }
 
-    return set_mario_action(m, ACT_DECELERATING, 0);
+    //return set_mario_action(m, ACT_DECELERATING, 0);
+    return set_mario_action(m, ACT_IDLE, 0);
 }
 
 void anim_and_audio_for_walk(struct MarioState *m) {
@@ -969,7 +970,7 @@ s32 act_turning_around(struct MarioState *m) {
     }
 
     if (m->input & INPUT_UNKNOWN_5) {
-        return set_mario_action(m, ACT_BRAKING, 0);
+        return set_mario_action(m, ACT_IDLE, 0); // return set_mario_action(m, ACT_BRAKING, 0);
     }
 
     if (!analog_stick_held_back(m)) {
@@ -1041,7 +1042,7 @@ s32 act_braking(struct MarioState *m) {
         return check_common_action_exits(m);
     }
 
-    if (apply_slope_decel(m, 2.0f)) {
+    if (apply_slope_decel(m, 0.5f)) {
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 
@@ -1456,14 +1457,14 @@ s32 act_crouch_slide(struct MarioState *m) {
         return set_mario_action(m, ACT_BUTT_SLIDE, 0);
     }
 
-    if (m->actionTimer < 30) {
+    /*if (m->actionTimer < 30) {
         m->actionTimer++;
         if (m->input & INPUT_A_PRESSED) {
             if (m->forwardVel > 10.0f) {
                 return set_jumping_action(m, ACT_LONG_JUMP, 0);
             }
         }
-    }
+    }*/
 
     if (m->input & INPUT_B_PRESSED) {
         if (m->forwardVel >= 10.0f) {
@@ -1478,7 +1479,7 @@ s32 act_crouch_slide(struct MarioState *m) {
     }
 
     if (m->input & INPUT_FIRST_PERSON) {
-        return set_mario_action(m, ACT_BRAKING, 0);
+        return set_mario_action(m, ACT_IDLE, 0); // return set_mario_action(m, ACT_BRAKING, 0);
     }
 
     cancel = common_slide_action_with_jump(m, ACT_CROUCHING, ACT_JUMP, ACT_FREEFALL,

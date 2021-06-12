@@ -34,6 +34,7 @@ void celeb_star_act_spin_around_mario(void) {
     o->oPosY += 5.0f;
     o->oFaceAngleYaw += 0x1000;
     o->oMoveAngleYaw += 0x2000;
+	o->oAnimState++;
 
     if (o->oTimer == 40)
         o->oAction = CELEB_STAR_ACT_FACE_CAMERA;
@@ -46,6 +47,7 @@ void celeb_star_act_spin_around_mario(void) {
 
 void celeb_star_act_face_camera(void) {
 
+    o->oAnimState = 0;
     if (o->oTimer < 10) {
 #if BUGFIX_STAR_BOWSER_KEY
         if (o->oCelebStarUnkF4 == 0) {
@@ -85,6 +87,14 @@ void bhv_celebration_star_sparkle_loop(void) {
 }
 
 void bhv_star_key_collection_puff_spawner_loop(void) {
-    spawn_mist_particles_variable(0, 10, 30.0f);
+    spawn_object(o, MODEL_STARDUST, bhvStarDust);
     o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
 }
+
+void bhv_stardust(void) {
+    if (o->oTimer == 30) {
+        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
+	    obj_mark_for_deletion(o);
+	}
+}
+    

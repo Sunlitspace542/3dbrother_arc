@@ -3,6 +3,7 @@
 #include "geo_commands.h"
 
 #include "make_const_nonconst.h"
+#include "convert_hms_to_geo_layouts.h"
 
 #include "common1.h"
 

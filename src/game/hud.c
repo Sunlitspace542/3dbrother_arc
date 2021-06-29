@@ -256,7 +256,11 @@ void render_hud_power_meter(void) {
     sPowerMeterVisibleTimer += 1;
 }
 
+#ifdef VERSION_JP
+#define HUD_TOP_Y 210
+#else
 #define HUD_TOP_Y 209
+#endif
 
 #define HUD_TOP_Y_COIN 193
 
@@ -264,22 +268,25 @@ void render_hud_power_meter(void) {
  * Renders the amount of lives Mario has.
  */
 void render_hud_mario_lives(void) {
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y, "LIFE"); // 'Mario Head' glyph
-    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y, " "); // 'X' glyph
-    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(76), HUD_TOP_Y, "%03d", gHudDisplay.lives);
+    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22), HUD_TOP_Y, "L"); // 'Mario Head' glyph
+    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(40), HUD_TOP_Y, "*"); // 'X' glyph
+    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y, "%02d", gHudDisplay.lives);
 }
 
 /**
  * Renders the amount of coins collected.
  */
 void render_hud_coins(void) {
-    print_text(22, HUD_TOP_Y_COIN, "COIN"); // 'Coin' glyph
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(40), HUD_TOP_Y_COIN, " "); // 'X' glyph
-    print_text_fmt_int(76, HUD_TOP_Y_COIN, "%03d", gHudDisplay.coins);
+    print_text(168, HUD_TOP_Y_COIN, "C"); // 'Coin' glyph
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(135), HUD_TOP_Y_COIN, "*"); // 'X' glyph
+    print_text_fmt_int(198, HUD_TOP_Y_COIN, "%02d", gHudDisplay.coins);
 }
 
-#define HUD_STARS_X 299
-#define HUD_TOP_Y_STAR 177
+#ifdef VERSION_JP
+#define HUD_STARS_X 72
+#else
+#define HUD_STARS_X 152
+#endif
 
 /**
  * Renders the amount of stars collected.
@@ -296,11 +303,12 @@ void render_hud_stars(void) {
         showX = 1;
     }
 
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y_STAR, "STAR"); // 'Star' glyph
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y, "S"); // 'Star' glyph
     if (showX == 1) {
-        print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 17, HUD_TOP_Y_STAR, " "); // 'X' glyph
+        print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 17, HUD_TOP_Y, "*"); // 'X' glyph
     }
-    print_text_fmt_int((showX * 13) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 42), HUD_TOP_Y_STAR, "%03d", gHudDisplay.stars);
+    print_text_fmt_int((showX * 13) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 17),
+                       HUD_TOP_Y, "%02d", gHudDisplay.stars);
 }
 
 /**

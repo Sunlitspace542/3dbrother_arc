@@ -7694,7 +7694,7 @@ static BAD_RETURN(s32) cutscene_dance_unused(UNUSED struct Camera *c) {
  * Slowly turn to the point 100 units in front of Mario
  */
 BAD_RETURN(s32) cutscene_dance_default_focus_mario(struct Camera *c) {
-    focus_in_front_of_mario(c, -100.f, 0.0f); // 0.0f era 0.2f
+    focus_in_front_of_mario(c, -100.f, 0.1f); // 0.1f era 0.2f
 }
 
 /**

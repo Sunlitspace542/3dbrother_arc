@@ -482,32 +482,33 @@ s32 act_triple_jump(struct MarioState *m) {
         return set_mario_action(m, ACT_SPECIAL_TRIPLE_JUMP, 0);
     }
 
-    /*if (m->input & INPUT_B_PRESSED) {
+    if (m->input & INPUT_B_PRESSED) {
         return set_mario_action(m, ACT_DIVE, 0);
     }
 
     if (m->input & INPUT_Z_PRESSED) {
         return set_mario_action(m, ACT_GROUND_POUND, 0);
-    }*/
+    }
 
     set_mario_action(m, ACT_TWIRLING, 0);
-/*#ifndef VERSION_JP
+    return FALSE;
+
+#ifndef VERSION_JP
     play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
 #else
-    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHOO);
-#endif*/
-    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHOO);
+    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHAA);
+#endif
 
-    //common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
-    common_air_action_step(m, ACT_TWIRL_LAND, MARIO_ANIM_TWIRL, 0);
+    common_air_action_step(m, ACT_TRIPLE_JUMP_LAND, MARIO_ANIM_TRIPLE_JUMP, 0);
 #ifdef VERSION_SH
-    if (m->action == ACT_TWIRL_LAND) {
+    if (m->action == ACT_TRIPLE_JUMP_LAND) {
         queue_rumble_data(5, 40);
     }
 #endif
     play_flip_sounds(m, 2, 8, 20);
     return FALSE;
 }
+
 
 s32 act_backflip(struct MarioState *m) {
     /*if (m->input & INPUT_Z_PRESSED) {
@@ -689,13 +690,15 @@ s32 act_twirling(struct MarioState *m) {
     } else {
         yawVelTarget = 0x1800;
     }
-
-    m->angleVel[1] = approach_s32(m->angleVel[1], yawVelTarget, 0x200, 0x200);
+    m->angleVel[1] = approach_s32(m->angleVel[1], yawVelTarget, 0x160, 0x200);
     m->twirlYaw += m->angleVel[1];
 
-    set_mario_animation(m, m->actionArg == 0 ? MARIO_ANIM_START_TWIRL : MARIO_ANIM_TWIRL);
-    if (is_anim_past_end(m)) {
+    set_mario_animation(m, m->actionArg == 0 ? MARIO_ANIM_DOUBLE_JUMP_RISE : m->actionArg == 1 ? MARIO_ANIM_START_TWIRL : MARIO_ANIM_TWIRL);
+    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, SOUND_MARIO_YAHOO);
+    if (is_anim_past_end(m) && m->actionArg == 0 && m->vel[1] <= 7.5f) {
         m->actionArg = 1;
+    } else if (is_anim_past_end(m) && m->actionArg == 1) {
+        m->actionArg = 2;
     }
 
     if (startTwirlYaw > m->twirlYaw) {
@@ -719,11 +722,9 @@ s32 act_twirling(struct MarioState *m) {
     }
 
     m->marioObj->header.gfx.angle[1] += m->twirlYaw;
-#ifdef VERSION_SH
-    reset_rumble_timers();
-#endif
     return FALSE;
 }
+
 
 s32 act_dive(struct MarioState *m) {
     if (m->actionArg == 0) {

@@ -4,7 +4,7 @@
     "01_cutscene_collect_star": ["22"],
     "02_menu_title_screen": ["11"],
     "03_level_grass": ["22"],
-    "04_level_inside_castle": ["0E"],
+    "04_level_inside_castle": ["1C_endless_stairs"],
     "05_level_water": ["13"],
     "06_level_hot": ["0F"],
     "07_level_boss_koopa": ["12"],

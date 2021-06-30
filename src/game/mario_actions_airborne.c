@@ -1317,36 +1317,10 @@ s32 act_air_hit_wall(struct MarioState *m) {
         mario_drop_held_object(m);
     }
 
-    if (++(m->actionTimer) <= 2) {
-        if (m->input & INPUT_A_PRESSED) {
-            m->vel[1] = 52.0f;
-            m->faceAngle[1] += 0x8000;
-            return set_mario_action(m, ACT_WALL_KICK_AIR, 0);
-        }
-    } else if (m->forwardVel >= 38.0f) {
-        m->wallKickTimer = 5;
-        if (m->vel[1] > 0.0f) {
-            m->vel[1] = 0.0f;
-        }
-
-        m->particleFlags |= PARTICLE_VERTICAL_STAR;
-        return set_mario_action(m, ACT_BACKWARD_AIR_KB, 0);
-    } else {
-        m->wallKickTimer = 5;
-        if (m->vel[1] > 0.0f) {
-            m->vel[1] = 0.0f;
-        }
-
-        if (m->forwardVel > 8.0f) {
-            mario_set_forward_vel(m, -8.0f);
-        }
+    if (m->forwardVel > 8.0f) {
+        mario_set_forward_vel(m, -8.0f);
         return set_mario_action(m, ACT_SOFT_BONK, 0);
     }
-
-#ifdef AVOID_UB
-    return
-#endif
-    set_mario_animation(m, MARIO_ANIM_START_WALLKICK);
 
     //! Missing return statement. The returned value is the result of the call
     // to set_mario_animation. In practice, this value is nonzero.

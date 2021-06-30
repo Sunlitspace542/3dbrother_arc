@@ -1042,7 +1042,7 @@ s32 act_braking(struct MarioState *m) {
         return check_common_action_exits(m);
     }
 
-    if (apply_slope_decel(m, 0.35f)) { //beta maerio: 0.5f
+    if (apply_slope_decel(m, 0.4f)) { //beta maerio: 0.5f
         return set_mario_action(m, ACT_BRAKING_STOP, 0);
     }
 

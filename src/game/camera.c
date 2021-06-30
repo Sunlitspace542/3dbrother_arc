@@ -9991,10 +9991,10 @@ BAD_RETURN(s32) cutscene_enter_painting(struct Camera *c) {
 
     cutscene_event(cutscene_enter_painting_stub, c, 0, 0);
     // Zoom in
-    set_fov_function(CAM_FOV_APP_20);
+    //set_fov_function(CAM_FOV_APP_20);
     sStatusFlags |= CAM_FLAG_SMOOTH_MOVEMENT;
 
-    if (gRipplingPainting != NULL) {
+    /*if (gRipplingPainting != NULL) {
         paintingAngle[0] = 0;
         paintingAngle[1] = (s32)((gRipplingPainting->yaw / 360.f) * 65536.f); // convert degrees to IAU
         paintingAngle[2] = 0;
@@ -10031,7 +10031,7 @@ BAD_RETURN(s32) cutscene_enter_painting(struct Camera *c) {
             sStatusFlags |= CAM_FLAG_SMOOTH_MOVEMENT;
         }
     }
-    c->mode = CAMERA_MODE_CLOSE;
+    c->mode = CAMERA_MODE_CLOSE;*/
 }
 
 /**

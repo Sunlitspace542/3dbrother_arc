@@ -701,7 +701,7 @@ s32 act_start_crouching(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_BACKFLIP, 0);
+        return set_jumping_action(m, ACT_JUMP, 0);
     }
 
     if (m->input & INPUT_ABOVE_SLIDE) {
@@ -726,7 +726,7 @@ s32 act_stop_crouching(struct MarioState *m) {
     }
 
     if (m->input & INPUT_A_PRESSED) {
-        return set_jumping_action(m, ACT_BACKFLIP, 0);
+        return set_jumping_action(m, ACT_JUMP, 0);
     }
 
     if (m->input & INPUT_ABOVE_SLIDE) {

@@ -1054,6 +1054,7 @@ SECTIONS
    MIO0_SEG(bbh_skybox, 0x0A000000)
    MIO0_SEG(bidw_skybox, 0x0A000000)
    MIO0_SEG(bits_skybox, 0x0A000000)
+   MIO0_SEG(creepy_skybox, 0x0A000000)
 
    // Texture bins
    MIO0_SEG(fire, 0x09000000)

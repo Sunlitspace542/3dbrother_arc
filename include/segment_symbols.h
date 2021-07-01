@@ -66,6 +66,7 @@ DECLARE_SEGMENT(ssl_skybox_mio0)
 DECLARE_SEGMENT(bbh_skybox_mio0)
 DECLARE_SEGMENT(bidw_skybox_mio0)
 DECLARE_SEGMENT(bits_skybox_mio0)
+DECLARE_SEGMENT(creepy_skybox_mio0)
 
 DECLARE_SEGMENT(fire_mio0)
 DECLARE_SEGMENT(spooky_mio0)

@@ -7694,7 +7694,7 @@ static BAD_RETURN(s32) cutscene_dance_unused(UNUSED struct Camera *c) {
  * Slowly turn to the point 100 units in front of Mario
  */
 BAD_RETURN(s32) cutscene_dance_default_focus_mario(struct Camera *c) {
-    focus_in_front_of_mario(c, -100.f, 0.1f); // 0.1f era 0.2f
+    focus_in_front_of_mario(c, -100.f, 0.2f);
 }
 
 /**
@@ -7717,8 +7717,8 @@ BAD_RETURN(s32) cutscene_dance_default_rotate(struct Camera *c) {
     sStatusFlags |= CAM_FLAG_SMOOTH_MOVEMENT;
     sYawSpeed = 0;
     set_fov_function(CAM_FOV_DEFAULT);
-    cutscene_event(cutscene_dance_default_focus_mario, c, 0, 0); // secondo 0 = 20
-    cutscene_event(cutscene_dance_move_to_mario, c, 0, 0);  //secondo 0 = 39
+    cutscene_event(cutscene_dance_default_focus_mario, c, 0, 20); // secondo 0 = 20 
+    cutscene_event(cutscene_dance_move_to_mario, c, 0, 0);  //secondo 0 = 39 - si avvicina a mario
     // Shake the camera on the 4th beat of the music, when Mario gives the peace sign.
     cutscene_event(cutscene_dance_shake_fov, c, 40, 40);
 

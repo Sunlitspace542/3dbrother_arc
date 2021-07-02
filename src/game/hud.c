@@ -321,7 +321,7 @@ void render_hud_keys(void) {
     
     UNUSED s32 PAD;
         print_text(key_X, HUD_TOP_Y, "/"); // unused glyph - beta key
-        print_text(key_X + 17, HUD_TOP_Y, "*"); // 'X' glyph
+        print_text(key_X + 15, HUD_TOP_Y, "*"); // 'X' glyph
         print_text_fmt_int(key_X + 30, HUD_TOP_Y, "%02d", gHudDisplay.keys);
     for (i = 0; i < gHudDisplay.keys; i++) {
         

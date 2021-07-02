@@ -1443,7 +1443,7 @@ s32 act_butt_slide_air(struct MarioState *m) {
             break;
     }
 
-    set_mario_animation(m, MARIO_ANIM_SLIDE);
+    set_mario_animation(m, MARIO_ANIM_SLIDE_MOTIONLESS);
     return FALSE;
 }
 

@@ -901,11 +901,11 @@ static u32 set_mario_action_moving(struct MarioState *m, u32 action, UNUSED u32 
 
     switch (action) {
         case ACT_WALKING:
-            if (floorClass != SURFACE_CLASS_VERY_SLIPPERY) {
+            /*if (floorClass != SURFACE_CLASS_VERY_SLIPPERY) {
                 if (0.0f <= forwardVel && forwardVel < mag) {
                     m->forwardVel = mag;
                 }
-            }
+            }*/
 
             m->marioObj->oMarioWalkingPitch = 0;
             break;

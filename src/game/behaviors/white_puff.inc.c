@@ -4,7 +4,7 @@ void bhv_white_puff_1_loop(void) {
     f32 sp1C = 0.1f;
     f32 sp18 = 0.5f;
     if (o->oTimer == 0) {
-        obj_translate_xz_random(o, 40.0f);
+        //obj_translate_xz_random(o, 40.0f);
         o->oPosY += 30.0f;
     }
     cur_obj_scale(o->oTimer * sp18 + sp1C);
@@ -15,6 +15,6 @@ void bhv_white_puff_1_loop(void) {
 }
 
 void bhv_white_puff_2_loop(void) {
-    if (o->oTimer == 0)
-        obj_translate_xz_random(o, 40.0f);
+    //if (o->oTimer == 0)
+        //obj_translate_xz_random(o, 40.0f);
 }

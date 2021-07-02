@@ -223,7 +223,7 @@ ALIGNED8 static const Texture texture_hud_char_decimal_point[] = {
 #endif
 
 ALIGNED8 static const Texture texture_hud_char_beta_key[] = {
-#include "textures/segment2/segment2.06000.rgba16.inc.c"
+    #include "textures/segment2/segment2.06000.rgba16.inc.c"
 };
 
 ALIGNED8 static const Texture texture_credits_char_3[] = {

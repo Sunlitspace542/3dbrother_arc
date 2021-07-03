@@ -121,12 +121,12 @@ Gfx *geo_intro_tm_copyright(s32 state, struct GraphNode *node, UNUSED void *cont
         gSPEndDisplayList(dlIter);
 
         // Once the "Super Mario 64" logo has just about zoomed fully, fade in the "TM" and copyright text
-        /*if (sIntroFrameCounter >= 19) {
+        if (sIntroFrameCounter >= 19) {
             sTmCopyrightAlpha += 26;
             if (sTmCopyrightAlpha > 255) {
                 sTmCopyrightAlpha = 255;
             }
-        }*/
+        }
     }
     return dl;
 }

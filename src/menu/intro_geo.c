@@ -61,9 +61,9 @@ Gfx *geo_intro_super_mario_64_logo(s32 state, struct GraphNode *node, UNUSED voi
         // determine scale based on the frame counter
         if (sIntroFrameCounter >= 0 && sIntroFrameCounter < INTRO_STEPS_ZOOM_IN) {
             // zooming in
-            // scaleX = scaleTable1[sIntroFrameCounter * 3];
-            // scaleY = scaleTable1[sIntroFrameCounter * 3 + 1];
-            // scaleZ = scaleTable1[sIntroFrameCounter * 3 + 2];
+            scaleX = 1.0f;
+            scaleY = 1.0f;
+            scaleZ = 1.0f;
         } else if (sIntroFrameCounter >= INTRO_STEPS_ZOOM_IN) {
             // holding
             scaleX = 1.0f;

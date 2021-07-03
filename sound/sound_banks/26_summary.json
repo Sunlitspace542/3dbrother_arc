@@ -1,0 +1,70 @@
+{     
+    "date": "2021-07-03",
+    "sample_bank": "instruments",
+    "envelopes": {
+        "envelope0": [
+            [2, 32700],
+            [103, 24112],
+            [409, 0],
+            "hang"
+        ],
+        "envelope1": [
+            [2, 32700],
+            [205, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope2": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope3": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope4": [
+            [6, 32700],
+            [298, 0],
+            [1, 0],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "42_vibraphone"
+        },
+        "inst1": {
+            "release_rate": 34,
+            "envelope": "envelope1",
+            "sound": "44_grand_piano"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope2",
+            "sound": "22_boys_choir"
+        },
+        "inst3": {
+            "release_rate": 34,
+            "envelope": "envelope3",
+            "sound": "1D"
+        },
+        "inst4": {
+            "release_rate": 10,
+            "envelope": "envelope4",
+            "sound": "26_crystal_rhodes"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4"
+    ]
+}

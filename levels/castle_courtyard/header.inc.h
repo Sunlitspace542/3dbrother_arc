@@ -1,0 +1,35 @@
+extern const GeoLayout castle_courtyard_area_1_geo[];
+extern const GeoLayout castle_courtyard_area_1[];
+extern const Collision castle_courtyard_area_1_collision[];
+extern const MacroObject castle_courtyard_area_1_macro_objs[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_0[24];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_0[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_1[76];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_1[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_2[98];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_2[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_3[149];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_3[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_4[32];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_4[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_5[106];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_5[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_6[157];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_6[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_7[16];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_7[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_8[6];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_8[];
+extern Vtx castle_courtyard_dl_MAP_mesh_vtx_9[50];
+extern Gfx castle_courtyard_dl_MAP_mesh_tri_9[];
+extern Vtx castle_courtyard_dl_other_wall_mesh_vtx_0[20];
+extern Gfx castle_courtyard_dl_other_wall_mesh_tri_0[];
+extern Vtx castle_courtyard_dl_shadows_mesh_vtx_0[48];
+extern Gfx castle_courtyard_dl_shadows_mesh_tri_0[];
+
+extern Gfx castle_courtyard_dl_MAP_mesh[];
+extern Gfx castle_courtyard_dl_other_wall_mesh[];
+extern Gfx castle_courtyard_dl_shadows_mesh[];
+extern Gfx castle_courtyard_dl_windows_mesh[];
+extern Gfx castle_courtyard_dl_material_revert_render_settings[];
+

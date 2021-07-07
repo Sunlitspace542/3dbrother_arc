@@ -354,6 +354,7 @@ void bhv_pyramid_top_fragment_init(void);
 void bhv_pyramid_top_fragment_loop(void);
 void bhv_pyramid_pillar_touch_detector_loop(void);
 void bhv_waterfall_sound_loop(void);
+void bhv_wind_sound_loop(void);
 void bhv_volcano_sound_loop(void);
 void bhv_castle_flag_init(void);
 void bhv_birds_sound_loop(void);

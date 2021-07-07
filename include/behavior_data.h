@@ -394,6 +394,7 @@ extern const BehaviorScript bhvPyramidTop[];
 extern const BehaviorScript bhvPyramidTopFragment[];
 extern const BehaviorScript bhvPyramidPillarTouchDetector[];
 extern const BehaviorScript bhvWaterfallSoundLoop[];
+extern const BehaviorScript bhvWindSoundLoop[];
 extern const BehaviorScript bhvVolcanoSoundLoop[];
 extern const BehaviorScript bhvCastleFlagWaving[];
 extern const BehaviorScript bhvBirdsSoundLoop[];

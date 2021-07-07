@@ -825,6 +825,7 @@ s8 UNUSED debug_sequence_tracker(s16 debugInputSequence[]) {
 #include "behaviors/pyramid_elevator.inc.c"
 #include "behaviors/pyramid_top.inc.c"
 #include "behaviors/sound_waterfall.inc.c"
+#include "behaviors/sound_wind.inc.c"
 #include "behaviors/sound_volcano.inc.c"
 #include "behaviors/castle_flag.inc.c"
 #include "behaviors/sound_birds.inc.c"

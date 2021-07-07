@@ -4461,6 +4461,13 @@ const BehaviorScript bhvWaterfallSoundLoop[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvWindSoundLoop[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_wind_sound_loop),
+    END_LOOP(),
+};
+
 const BehaviorScript bhvVolcanoSoundLoop[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     BEGIN_LOOP(),

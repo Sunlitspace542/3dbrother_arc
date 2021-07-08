@@ -34,6 +34,10 @@ Lights1 castle_courtyard_dl_FOUNTAIN_f3d_layer1_area1_lights = gdSPDefLights1(
 	0x7F, 0x7F, 0x7F,
 	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
 
+Lights1 castle_courtyard_dl_LIGHT_f3d_lights = gdSPDefLights1(
+	0x7F, 0x7F, 0x7F,
+	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
+
 Lights1 castle_courtyard_dl_SHADOW_f3d_layer5_area1_lights = gdSPDefLights1(
 	0x7F, 0x7F, 0x7F,
 	0xFE, 0xFE, 0xFE, 0x28, 0x28, 0x28);
@@ -3725,26 +3729,26 @@ Gfx castle_courtyard_dl_MAP_mesh_tri_8[] = {
 };
 
 Vtx castle_courtyard_dl_other_wall_mesh_vtx_0[20] = {
-	{{{-246, 298, -2282},0, {346, -10256},{0xD0, 0x0, 0x8A, 0xFF}}},
-	{{{-585, 298, -1943},0, {1228, -10256},{0x8A, 0x0, 0xD0, 0xFF}}},
-	{{{-585, 750, -1943},0, {1228, -11087},{0x8A, 0x0, 0xD0, 0xFF}}},
-	{{{-246, 750, -2282},0, {346, -11087},{0xD0, 0x0, 0x8A, 0xFF}}},
-	{{{269, 298, -2282},0, {-598, -10256},{0x30, 0x0, 0x8A, 0xFF}}},
-	{{{269, 750, -2282},0, {-598, -11087},{0x30, 0x0, 0x8A, 0xFF}}},
-	{{{608, 298, -1943},0, {-1480, -10256},{0x76, 0x0, 0xD0, 0xFF}}},
-	{{{608, 750, -1943},0, {-1480, -11087},{0x76, 0x0, 0xD0, 0xFF}}},
-	{{{608, 298, -1427},0, {-2426, -10256},{0x76, 0x0, 0x30, 0xFF}}},
-	{{{608, 750, -1427},0, {-2426, -11087},{0x76, 0x0, 0x30, 0xFF}}},
-	{{{269, 298, -1087},0, {-3309, -10256},{0x31, 0x0, 0x75, 0xFF}}},
-	{{{269, 750, -1087},0, {-3309, -11087},{0x31, 0x0, 0x75, 0xFF}}},
-	{{{-246, 298, -1087},0, {-4253, -10256},{0xCF, 0x0, 0x75, 0xFF}}},
-	{{{-246, 750, -1087},0, {-4253, -11087},{0xCF, 0x0, 0x75, 0xFF}}},
-	{{{-585, 298, -1427},0, {-5136, -10256},{0x8A, 0x0, 0x30, 0xFF}}},
-	{{{-585, 750, -1427},0, {-5136, -11087},{0x8A, 0x0, 0x30, 0xFF}}},
-	{{{-585, 298, -1943},0, {-6082, -10256},{0x8A, 0x0, 0xD0, 0xFF}}},
-	{{{-585, 298, -1427},0, {-5136, -10256},{0x8A, 0x0, 0x30, 0xFF}}},
-	{{{-585, 750, -1427},0, {-5136, -11087},{0x8A, 0x0, 0x30, 0xFF}}},
-	{{{-585, 750, -1943},0, {-6082, -11087},{0x8A, 0x0, 0xD0, 0xFF}}},
+	{{{-246, 298, -2282},0, {346, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 298, -1943},0, {1228, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 750, -1943},0, {1228, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-246, 750, -2282},0, {346, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{269, 298, -2282},0, {-598, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{269, 750, -2282},0, {-598, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{608, 298, -1943},0, {-1480, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{608, 750, -1943},0, {-1480, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{608, 298, -1427},0, {-2426, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{608, 750, -1427},0, {-2426, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{269, 298, -1087},0, {-3309, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{269, 750, -1087},0, {-3309, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-246, 298, -1087},0, {-4253, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-246, 750, -1087},0, {-4253, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 298, -1427},0, {-5136, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 750, -1427},0, {-5136, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 298, -1943},0, {-6082, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 298, -1427},0, {-5136, -10256},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 750, -1427},0, {-5136, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
+	{{{-585, 750, -1943},0, {-6082, -11087},{0xFF, 0xFF, 0xFF, 0xFF}}},
 };
 
 Gfx castle_courtyard_dl_other_wall_mesh_tri_0[] = {
@@ -4207,8 +4211,8 @@ Gfx mat_revert_castle_courtyard_dl_FOUNTAIN_f3d_layer1_area1[] = {
 
 Gfx mat_castle_courtyard_dl_LIGHT_f3d[] = {
 	gsDPPipeSync(),
-	gsDPSetCombineLERP(0, 0, 0, TEXEL0, TEXEL0, 0, ENVIRONMENT, 0, 0, 0, 0, TEXEL0, TEXEL0, 0, ENVIRONMENT, 0),
-	gsSPClearGeometryMode(G_CULL_BACK),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0),
+	gsSPClearGeometryMode(G_LIGHTING),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPTileSync(),
 	gsDPSetTextureImage(G_IM_FMT_IA, G_IM_SIZ_8b_LOAD_BLOCK, 1, castle_courtyard_dl__4_ia8),
@@ -4218,12 +4222,13 @@ Gfx mat_castle_courtyard_dl_LIGHT_f3d[] = {
 	gsDPPipeSync(),
 	gsDPSetTile(G_IM_FMT_IA, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
 	gsDPSetTileSize(0, 0, 0, 124, 124),
+	gsSPSetLights1(castle_courtyard_dl_LIGHT_f3d_lights),
 	gsSPEndDisplayList(),
 };
 
 Gfx mat_revert_castle_courtyard_dl_LIGHT_f3d[] = {
 	gsDPPipeSync(),
-	gsSPSetGeometryMode(G_CULL_BACK),
+	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPEndDisplayList(),
 };
 

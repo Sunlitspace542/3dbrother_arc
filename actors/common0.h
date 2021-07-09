@@ -65,6 +65,15 @@ extern const Gfx cannon_barrel_seg8_dl_08006408[];
 extern const Gfx cannon_barrel_seg8_dl_080064C0[];
 extern const Gfx cannon_barrel_seg8_dl_08006660[];
 
+// springboard
+extern const GeoLayout springboard_top_geo[];
+extern const GeoLayout springboard_spring_geo[];
+extern const GeoLayout springboard_bottom_geo[];
+extern const Gfx springboard_checkerboard_seg5_dl_050016B8[];
+extern const Gfx springboard_spring_seg5_dl_05001800[];
+extern const Gfx springboard_checkerboard_seg5_dl_05001900[];
+extern const Collision springboard_collision_05001A28[];
+
 // cannon_base
 extern const GeoLayout cannon_base_geo[];
 extern const Gfx cannon_base_seg8_dl_08005658[];

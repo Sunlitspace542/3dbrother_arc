@@ -75,6 +75,7 @@ void bhv_beta_trampoline_top_loop(void) {
     if (gMarioObject->platform == o) {
         stub_mario_step_2();
         o->oBetaTrampolineMarioOnTrampoline = TRUE;
+        cur_obj_play_sound_2(SOUND_GENERAL_BOING3);
 
         o->oPosY =
             (o->oPosY > (o->oHomeY - 150.0f + 75.0f)) ?
@@ -85,6 +86,7 @@ void bhv_beta_trampoline_top_loop(void) {
         o->oBetaTrampolineAdditiveYVel =
             ((o->oBehParams2ndByte >> 4) / 2.0f) +
             ((o->oHomeY - o->oPosY) / ((o->oBehParams2ndByte & 0x0F) / 2.0f));
+            
     } else {
         o->oBetaTrampolineMarioOnTrampoline = FALSE;
         //o->oPosY = o->oHomeY;

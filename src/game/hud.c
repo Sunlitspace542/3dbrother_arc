@@ -191,41 +191,42 @@ static void animate_power_meter_hiding(void) {
  * Handles power meter actions depending of the health segments values.
  */
 void handle_power_meter_actions(s16 numHealthWedges) {
-    // // Show power meter if health is not full, less than 8
-    // if (numHealthWedges < 8 && sPowerMeterStoredHealth == 8 && sPowerMeterHUD.animation == POWER_METER_HIDDEN) {
-    //     sPowerMeterHUD.animation = POWER_METER_EMPHASIZED;
-    //     sPowerMeterHUD.y = 166;
-    // }
-
-    // // Show power meter if health is full, has 8
-    // if (numHealthWedges == 8 && sPowerMeterStoredHealth == 7) {
-    //     sPowerMeterVisibleTimer = 0;
-    // }
-
-    // sPowerMeterHUD.animation = POWER_METER_EMPHASIZED;
-    // sPowerMeterVisibleTimer = 0;
-
-    // After health is full, hide power meter
-    //if (numHealthWedges == 8 && sPowerMeterVisibleTimer > 45.0) {
-    //    sPowerMeterHUD.animation = POWER_METER_HIDING;
-    //}
 
     // Update to match health value
-    //sPowerMeterStoredHealth = numHealthWedges;
+    sPowerMeterStoredHealth = numHealthWedges;
 
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(87), 209, "]"); // 'Coin' glyph
-    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", gHudDisplay.coins);
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(34), 209, "%"); // 'X' glyph
-
-    // If Mario is swimming, keep power meter visible
-    // if (gPlayerCameraState->action & ACT_FLAG_SWIMMING) {
-    //     if (sPowerMeterHUD.animation == POWER_METER_HIDDEN
-    //         || sPowerMeterHUD.animation == POWER_METER_EMPHASIZED) {
-    //         sPowerMeterHUD.animation = POWER_METER_DEEMPHASIZING;
-    //         sPowerMeterHUD.y = 166;
-    //     }
-    //     sPowerMeterVisibleTimer = 0;
-    // }
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(87), 209, "]"); // 'health' glyph
+    //print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", numHealthWedges); // health
+    switch(numHealthWedges) {
+        case 8:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 100);
+            break;
+        case 7:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 87);
+            break;
+        case 6:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 75);
+            break;
+        case 5:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 62);
+            break;
+        case 4:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 50);
+            break;
+        case 3:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 37);
+            break;
+        case 2:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 25);
+            break;
+        case 1:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 12);
+            break;
+        default:
+            print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 0);
+            break;          
+    }
+    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(34), 209, "%"); // '%' glyph
 }
 
 /**

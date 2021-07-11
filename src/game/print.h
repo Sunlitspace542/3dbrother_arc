@@ -19,7 +19,7 @@
 #define GLYPH_COIN            51
 #define GLYPH_MARIO_HEAD      52
 #define GLYPH_STAR            53
-#define GLYPH_PERIOD          54
+#define GLYPH_HEALTH_ICON     54
 #define GLYPH_BETA_KEY        55
 #define GLYPH_APOSTROPHE      56
 #define GLYPH_DOUBLE_QUOTE    57

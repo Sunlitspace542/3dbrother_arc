@@ -338,9 +338,13 @@ s8 char_to_glyph_index(char c) {
         return GLYPH_STAR; // star
     }
 
-    if (c == '.') {
-        return GLYPH_PERIOD; // large shaded dot, JP only
+    if (c == ']') {
+        return GLYPH_HEALTH_ICON; // health icon
     }
+
+    // if (c == '.') {
+    //     return GLYPH_PERIOD; // large shaded dot, JP only
+    // }
 
     if (c == '/') {
         return GLYPH_BETA_KEY; // beta key, JP only. Reused for Ü in EU.

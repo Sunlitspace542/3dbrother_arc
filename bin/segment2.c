@@ -195,10 +195,15 @@ ALIGNED8 static const Texture texture_hud_char_ampersand[] = {
 #include "textures/segment2/segment2.05200.rgba16.inc.c"// JP &
 };
 
-ALIGNED8 static const Texture texture_hud_char_percent[] = {
-#include "textures/segment2/segment2.05400.rgba16.inc.c"// JP %
-};
 #endif
+
+ALIGNED8 static const Texture texture_hud_char_health[] = {
+#include "textures/segment2/segment2.05200.rgba16.inc.c"
+};
+
+ALIGNED8 static const Texture texture_hud_char_percent[] = {
+#include "textures/segment2/segment2.05400.rgba16.inc.c"
+};
 
 ALIGNED8 static const Texture texture_hud_char_multiply[] = {
 #include "textures/segment2/segment2.05600.rgba16.inc.c"
@@ -1831,10 +1836,10 @@ const Texture *const main_hud_lut[] = {
     texture_hud_char_S, texture_hud_char_T, texture_hud_char_U,               0x0,
     texture_hud_char_W,               0x0, texture_hud_char_Y,               0x0,
                   0x0,               0x0,               0x0,               0x0,
-                  0x0,               0x0,               0x0,               0x0,
+    texture_hud_char_percent,        0x0,               0x0,               0x0,
                   0x0,               0x0,               0x0,               0x0,
                   0x0,               0x0, texture_hud_char_multiply, texture_hud_char_coin,
-    texture_hud_char_mario_head, texture_hud_char_star,               0x0, texture_hud_char_beta_key,
+    texture_hud_char_mario_head, texture_hud_char_star, texture_hud_char_health, texture_hud_char_beta_key,
     texture_hud_char_apostrophe, texture_hud_char_double_quote, 
 #else
     texture_hud_char_0, texture_hud_char_1, texture_hud_char_2, texture_hud_char_3,
@@ -1850,7 +1855,7 @@ const Texture *const main_hud_lut[] = {
     texture_hud_char_percent,                 0x0,                      0x0,                  0x0,
                       0x0,                   0x0,                      0x0,                  0x0,
                       0x0,                   0x0, texture_hud_char_multiply, texture_hud_char_coin,
-    texture_hud_char_mario_head, texture_hud_char_star, texture_hud_char_decimal_point, texture_hud_char_beta_key,
+    texture_hud_char_mario_head, texture_hud_char_star, texture_hud_char_health, texture_hud_char_beta_key,
     texture_hud_char_apostrophe, texture_hud_char_double_quote,
 #endif
 };

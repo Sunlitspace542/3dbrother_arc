@@ -451,8 +451,7 @@ void render_hud(void) {
             render_hud_mario_lives();
         }
 
-        //if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT) {
-        if (hudDisplayFlags) {
+        if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT) {
             render_hud_coins();
         }
 

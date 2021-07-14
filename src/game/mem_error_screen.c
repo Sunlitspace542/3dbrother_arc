@@ -45,25 +45,21 @@ u8 does_pool_end_lie_out_of_bounds(void *end) {
     }
 }
 
-// If you're using an N64 console, then you will need to buy an\nexpansion pak to play this ROM hack.
+// 'No expansion pak' text
 u8 text_console_8mb[] = { TEXT_CONSOLE_8MB };
 
-// If you are using PJ64 1.6, go to: Options ► Settings ► Rom Settings Tab ► Memory Size then select 8
-// MB from the drop-down box.
+// Buy expansion pak text
 u8 text_pj64[] = { TEXT_PJ64 };
 
-// If you are using PJ64 2.X, go to: Options ► Settings ► Config: ► Memory Size, select 8 MB
-u8 text_copyright[] = { TEXT_COPYRIGHT };
-
-// If you are using PJ64 2.X, go to: Options ► Settings ► Config: ► Memory Size, select 8 MB
-u8 text_copyright2[] = { TEXT_COPYRIGHT2 };
+// Copyright/s
+u8 text_copyright[] = { TEXT_COPYRIGHT }, text_copyright2[] = { TEXT_COPYRIGHT2 };
 
 Gfx *geo18_display_error_message(u32 run, UNUSED struct GraphNode *sp44, UNUSED u32 sp48) {
     if (run) {
         if (gDelayForErrorMessage > 0) {
             // Draw color text title.
-            print_text(58, 210, "you are not using");
-            print_text(58, 192, "the expansion pak");
+            print_text(55, 210, "you are not using");
+            print_text(55, 192, "the expansion pak");
 
             // Init generic text rendering
             create_dl_ortho_matrix();
@@ -76,7 +72,7 @@ Gfx *geo18_display_error_message(u32 run, UNUSED struct GraphNode *sp44, UNUSED 
             print_generic_string(8, 170, text_console_8mb);
             print_generic_string(8, 120, text_pj64);
             print_generic_string(8, 54, text_copyright);
-            print_generic_string(8, 70, text_copyright2);
+            print_generic_string(8, 39, text_copyright2);
 
             // Cleanup
             gSPDisplayList(gDisplayListHead++,

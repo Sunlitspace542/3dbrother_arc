@@ -1599,7 +1599,7 @@ s32 common_ground_knockback_action(struct MarioState *m, s32 animation, s32 arg2
 #ifdef VERSION_JP
         play_sound_if_no_flag(m, SOUND_MARIO_OOOF, MARIO_MARIO_SOUND_PLAYED);
 #else
-        play_sound_if_no_flag(m, SOUND_MARIO_OOOF2, MARIO_MARIO_SOUND_PLAYED);
+        //play_sound_if_no_flag(m, SOUND_MARIO_OOOF2, MARIO_MARIO_SOUND_PLAYED);
 #endif
     }
 

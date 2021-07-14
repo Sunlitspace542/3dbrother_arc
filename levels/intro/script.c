@@ -29,6 +29,7 @@ const LevelScript level_intro_entry_error_screen[] = {
 
     FREE_LEVEL_POOL(),
     LOAD_AREA(/*area*/ 1),
+    SET_MENU_MUSIC(SEQ_MEM_ERROR),
     SLEEP(/*frames*/ 32767),
     EXIT_AND_EXECUTE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd, level_intro_entry_error_screen),
 };

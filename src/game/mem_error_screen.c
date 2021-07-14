@@ -53,13 +53,17 @@ u8 text_console_8mb[] = { TEXT_CONSOLE_8MB };
 u8 text_pj64[] = { TEXT_PJ64 };
 
 // If you are using PJ64 2.X, go to: Options ► Settings ► Config: ► Memory Size, select 8 MB
-u8 text_pj64_2[] = { TEXT_PJ64_2 };
+u8 text_copyright[] = { TEXT_COPYRIGHT };
+
+// If you are using PJ64 2.X, go to: Options ► Settings ► Config: ► Memory Size, select 8 MB
+u8 text_copyright2[] = { TEXT_COPYRIGHT2 };
 
 Gfx *geo18_display_error_message(u32 run, UNUSED struct GraphNode *sp44, UNUSED u32 sp48) {
     if (run) {
         if (gDelayForErrorMessage > 0) {
             // Draw color text title.
-            print_text(10, 210, "ERROR    Need more memory");
+            print_text(58, 210, "you are not using");
+            print_text(58, 192, "the expansion pak");
 
             // Init generic text rendering
             create_dl_ortho_matrix();
@@ -71,7 +75,8 @@ Gfx *geo18_display_error_message(u32 run, UNUSED struct GraphNode *sp44, UNUSED 
 
             print_generic_string(8, 170, text_console_8mb);
             print_generic_string(8, 120, text_pj64);
-            print_generic_string(8, 54, text_pj64_2);
+            print_generic_string(8, 54, text_copyright);
+            print_generic_string(8, 70, text_copyright2);
 
             // Cleanup
             gSPDisplayList(gDisplayListHead++,

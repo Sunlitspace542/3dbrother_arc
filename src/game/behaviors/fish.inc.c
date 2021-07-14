@@ -248,7 +248,7 @@ void bhv_fish_loop(void)
     cur_obj_resolve_wall_collisions();
 
     // Delete fish if it's drifted to an area with no water.
-    if (gCurrLevelNum != LEVEL_UNKNOWN_32) {
+    if (gCurrLevelNum != LEVEL_YAJIMA_TEST) {
         if (o->oFishWaterLevel < FLOOR_LOWER_LIMIT_MISC) {
             obj_mark_for_deletion(o);
             return;

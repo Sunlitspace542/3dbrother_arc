@@ -31,6 +31,10 @@
 
 #include "levels/menu/header.h"
 #include "levels/intro/header.h"
+#include "levels/castle/header.h"
+#include "levels/athletic/header.h"
+#include "levels/donjon/header.h"
+#include "levels/yajima_test/header.h"
 
 #include "level_headers.h"
 
@@ -74,8 +78,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_WATER_SPLASH,            water_splash_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WAVE_TRAIL,              wave_trail_geo),
     LOAD_MODEL_FROM_GEO(MODEL_YELLOW_COIN,             yellow_coin_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_STAR,                    star_geo),\
-    LOAD_MODEL_FROM_GEO(MODEL_STARDUST,                stardust_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_STAR,                    star_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TRANSPARENT_STAR,        transparent_star_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WOODEN_SIGNPOST,         wooden_signpost_geo),
     LOAD_MODEL_FROM_DL( MODEL_WHITE_PARTICLE_SMALL,    white_particle_small_dl,     LAYER_ALPHA),
@@ -211,7 +214,6 @@ const LevelScript script_func_global_3[] = {
     LOAD_MODEL_FROM_GEO(MODEL_BLARGG,                  blargg_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BULLY,                   bully_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BULLY_BOSS,              bully_boss_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_MOTOS, RCP_HmsEnemymotos_basedata_A),
     RETURN(),
 };
 

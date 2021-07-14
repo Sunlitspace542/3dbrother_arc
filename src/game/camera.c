@@ -8570,7 +8570,7 @@ BAD_RETURN(s32) cutscene_death_standing_start(struct Camera *c) {
  */
 BAD_RETURN(s32) cutscene_death_standing_goto_mario(struct Camera *c) {
     death_goto_mario(c);
-    set_handheld_shake(HAND_CAM_SHAKE_HIGH);
+    //set_handheld_shake(HAND_CAM_SHAKE_HIGH);
 }
 
 /**
@@ -8607,7 +8607,7 @@ BAD_RETURN(s32) cutscene_death_stomach(struct Camera *c) {
     cutscene_event(cutscene_death_stomach_start, c, 0, 0);
     cutscene_event(cutscene_death_stomach_goto_mario, c, 0, -1);
     sStatusFlags |= CAM_FLAG_SMOOTH_MOVEMENT;
-    set_handheld_shake(HAND_CAM_SHAKE_CUTSCENE);
+    //set_handheld_shake(HAND_CAM_SHAKE_CUTSCENE);
 }
 
 BAD_RETURN(s32) cutscene_bbh_death_start(struct Camera *c) {

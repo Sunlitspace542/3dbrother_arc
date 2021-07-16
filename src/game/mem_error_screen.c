@@ -52,7 +52,7 @@ u8 text_console_8mb[] = { TEXT_CONSOLE_8MB };
 u8 text_pj64[] = { TEXT_PJ64 };
 
 // Copyright/s
-u8 text_copyright[] = { TEXT_COPYRIGHT }, text_copyright2[] = { TEXT_COPYRIGHT2 };
+u8 text_copyright[] = { TEXT_COPYRIGHT };
 
 Gfx *geo18_display_error_message(u32 run, UNUSED struct GraphNode *sp44, UNUSED u32 sp48) {
     if (run) {
@@ -69,10 +69,9 @@ Gfx *geo18_display_error_message(u32 run, UNUSED struct GraphNode *sp44, UNUSED 
             // Set text color to white
             gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
 
-            print_generic_string(8, 170, text_console_8mb);
+            print_generic_string(8, 160, text_console_8mb);
             print_generic_string(8, 120, text_pj64);
-            print_generic_string(8, 54, text_copyright);
-            print_generic_string(8, 39, text_copyright2);
+            print_generic_string(14, 54, text_copyright);
 
             // Cleanup
             gSPDisplayList(gDisplayListHead++,

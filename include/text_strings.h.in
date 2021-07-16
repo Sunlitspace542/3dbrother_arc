@@ -26,10 +26,9 @@
 #define TEXT_HUD_CONGRATULATIONS _("CONGRATULATIONS") // Course Complete Text, Bowser Courses
 
 // Memory Expansion Error Screen
-#define TEXT_CONSOLE_8MB _("This Super Mario 64 Part 2 cartridge requires\nan Expansion Pak to be played.")
-#define TEXT_PJ64 _("Please do purchase a Nintendo 64 Expansion Pak\nfrom your local store.\nWe apologize for the inconvenience.")
-#define TEXT_COPYRIGHT _("             (C) Nintendo of America, 1995")
-#define TEXT_COPYRIGHT2 _("             (C) Tonino Scapocchiola,  1995")
+#define TEXT_CONSOLE_8MB _("The System hasn't detected the Expansion Pak")
+#define TEXT_PJ64 _("The N64 Expansion Pak Accessory must be installed\nin the N64 for this game\nWe apologize for the inconvenience.")
+#define TEXT_COPYRIGHT _("             (C) 3DBrother Team,  2021")
 
 #if defined(VERSION_JP) || defined(VERSION_SH)
 

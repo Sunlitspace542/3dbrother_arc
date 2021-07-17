@@ -63,8 +63,8 @@ void celeb_star_act_face_camera(void) {
         o->oFaceAngleYaw = gMarioObject->header.gfx.angle[1];
     }
 
-    if (o->oTimer == 59)
-        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
+    /*if (o->oTimer == 59)
+        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;*/
 }
 
 void bhv_celebration_star_loop(void) {

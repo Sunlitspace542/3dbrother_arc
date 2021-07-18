@@ -1333,7 +1333,7 @@ s32 act_burning_ground(struct MarioState *m) {
         set_mario_action(m, ACT_BURNING_FALL, 0);
     }
 
-    set_mario_anim_with_accel(m, MARIO_ANIM_RUNNING, (s32)(m->forwardVel / 2.0f * 0x10000));
+    set_mario_anim_with_accel(m, MARIO_ANIM_BEND_KNESS_RIDING_SHELL, (s32)(m->forwardVel / 2.0f * 0x10000));
     play_step_sound(m, 9, 45);
 
     m->particleFlags |= PARTICLE_FIRE;

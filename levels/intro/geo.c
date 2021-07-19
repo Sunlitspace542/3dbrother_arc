@@ -48,7 +48,7 @@ const GeoLayout intro_geo_0002D0[] = {
       GEO_OPEN_NODE(),
          GEO_CAMERA_FRUSTUM(45, 128, 16384),
          GEO_OPEN_NODE(),
-            GEO_CAMERA(0, 0, 0, 3200, 0, 0, 0, 0x00000000),
+            GEO_CAMERA(0, 0, 0, 1200, 0, 0, 0, 0x00000000),
             GEO_OPEN_NODE(),
                GEO_ASM(0, geo_intro_super_mario_64_logo),
             GEO_CLOSE_NODE(),
@@ -101,7 +101,7 @@ const GeoLayout intro_geo_mario_head_dizzy[] = {
       GEO_OPEN_NODE(),
          GEO_NODE_ORTHO(100),
          GEO_OPEN_NODE(),
-            GEO_ASM(0, geo_intro_gameover_backdrop),
+            GEO_ASM(0, geo_intro_regular_backdrop),
 #ifdef VERSION_SH
             GEO_ASM(0, geo_intro_face_easter_egg),
 #endif

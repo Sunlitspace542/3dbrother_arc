@@ -1471,7 +1471,7 @@ void update_mario_health(struct MarioState *m) {
                     if ((m->pos[1] >= (m->waterLevel - 140)) && !terrainIsSnow) {
                         m->health += 0x1A;
                     } else if (!gDebugLevelSelect) {
-                        m->health -= (terrainIsSnow ? 3 : 1);
+                        m->health -= (terrainIsSnow ? 4 : 2);
                     }
                 }
             }
@@ -1490,8 +1490,8 @@ void update_mario_health(struct MarioState *m) {
             m->health = 0x880;
         }
         //if mario isn't underwater and his life is below 8 tacs, regenerate health periodically
-        if ((m->action & ACT_GROUP_MASK) != ACT_GROUP_SUBMERGED && m->health < 0x800) {
-            m->health += 0x1;
+        if (m->health < 0x880) {
+            m->health += 1;
         }
         if (m->health < 0x100) {
             m->health = 0xFF;

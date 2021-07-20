@@ -232,7 +232,9 @@ void handle_power_meter_actions(s16 numHealthWedges) {
 	hp = numHealthWedges * 100 / 8;
 	*/
 	// otherwise...
-	hp = gMarioState->health * 100 / 0x880;
+	hp = gMarioState->health - 0xFF; //remaining: 0x781
+	if (hp < 0) hp = 0;
+	hp = hp * 100 / 0x781;
 	
 	//print health
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", hp);

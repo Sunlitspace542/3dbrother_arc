@@ -12,15 +12,20 @@
 						   March 5th, 2021.
  ********************************************************************************/
  
+#define G_CC_MARIO_MAPPING G_CC_BLENDRGBFADEA  
+#define G_CC_MARIO_NORMAL G_CC_SHADEFADEA
 #include "gex.h"
 #define ConvertVtx(A,B,C,D,E,F,G,H,I,J) {{{A,B,C},D,{E,F},{G,H,I,J}}}
  
 #define SCALE  4
-#define ShapeColor_luigi(R,G,B) {{R/SCALE ,G/SCALE ,B/SCALE ,0 ,R/SCALE ,G/SCALE ,B/SCALE ,0 },{ R, G, B, 0, R, G, B, 0, LIGHT_X, LIGHT_Y, LIGHT_Z, 0}}
+//#define ShapeColor_luigi(R,G,B) {{R/SCALE ,G/SCALE ,B/SCALE ,0 ,R/SCALE ,G/SCALE ,B/SCALE ,0 },{ R, G, B, 0, R, G, B, 0, LIGHT_X, LIGHT_Y, LIGHT_Z, 0}}
+
+//! why not just gdSPDefLights1?
 
 #define LIGHT_X 0
 #define LIGHT_Y 0
 #define LIGHT_Z 127
+#define ShapeColor_luigi(r,g,b) gdSPDefLights1(r/SCALE,g/SCALE,b/SCALE,r,g,b,LIGHT_X,LIGHT_Y,LIGHT_Z)
 
 static Lights1 light_luigi_head[] = {
 	ShapeColor_luigi( 22,254,  2),
@@ -5423,6 +5428,8 @@ Gfx RCP_luigi_near13[] = {
 	gsSPEndDisplayList()
 };
 Gfx mario_butt[] = {
+	gsDPPipeSync(),
+	gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
 	gsSPNumLights(1),
 	gsSPLight((&light_luigi_near[4].l[0]),1),
 	gsSPLight((&light_luigi_near[4].a),2),

@@ -191,13 +191,13 @@ static void animate_power_meter_hiding(void) {
  * Handles power meter actions depending of the health segments values.
  */
 void handle_power_meter_actions(s16 numHealthWedges) {
-
+	int hp;
     // Update to match health value
     sPowerMeterStoredHealth = numHealthWedges;
 
     print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(87), 209, "]"); // 'health' glyph
     //print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", numHealthWedges); // health
-    switch(numHealthWedges) {
+    /*switch(numHealthWedges) {
         case 8:
             print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 100);
             break;
@@ -225,7 +225,18 @@ void handle_power_meter_actions(s16 numHealthWedges) {
         default:
             print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", 0);
             break;          
-    }
+    }*/
+	
+	// if you want the old style thing back:
+	/*
+	hp = numHealthWedges * 100 / 8;
+	*/
+	// otherwise...
+	hp = gMarioState->health * 100 / 0x880;
+	
+	//print health
+    print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(70), 209, "%03d", hp);
+	
     print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(34), 209, "%"); // '%' glyph
 }
 

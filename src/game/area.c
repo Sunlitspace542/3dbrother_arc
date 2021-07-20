@@ -105,6 +105,8 @@ void set_warp_transition_rgb(u8 red, u8 green, u8 blue) {
 }
 
 void print_intro_text(void) {
+	print_text_centered (SCREEN_WIDTH / 2, 150, "3D BROTHER");
+	print_text_centered (SCREEN_WIDTH / 2, 150-16, "PLACEHOLDER NAME");
 #ifdef VERSION_EU
     s32 language = eu_get_language();
 #endif
@@ -120,8 +122,10 @@ void print_intro_text(void) {
 #ifdef VERSION_EU
             print_text(20, 20, "START");
 #else
-            print_text_centered(62, 48, "PRESS");
-            print_text_centered(62, 30, "START");
+            //print_text_centered(62, 48, "PRESS");
+            //print_text_centered(62, 30, "START");
+			
+			print_text_centered (SCREEN_WIDTH / 2, 69, "PRESS START BUTTON");
 #endif
         }
     }

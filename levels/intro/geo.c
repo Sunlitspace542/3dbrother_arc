@@ -76,13 +76,13 @@ const GeoLayout intro_geo_mario_head_regular[] = {
 #endif
          GEO_CLOSE_NODE(),
       GEO_CLOSE_NODE(),
-      GEO_ZBUFFER(1),
+      /*GEO_ZBUFFER(1),
       GEO_OPEN_NODE(),
          GEO_CAMERA_FRUSTUM(45, 128, 16384),
          GEO_OPEN_NODE(),
             GEO_ASM(2, geo_draw_mario_head_goddard),
          GEO_CLOSE_NODE(),
-      GEO_CLOSE_NODE(),
+      GEO_CLOSE_NODE(),*/
 #ifdef VERSION_SH
    GEO_ZBUFFER(0),
    GEO_OPEN_NODE(),

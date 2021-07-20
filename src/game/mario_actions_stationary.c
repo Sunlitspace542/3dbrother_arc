@@ -560,7 +560,7 @@ s32 act_crouching(struct MarioState *m) {
     }
 
     stationary_ground_step(m);
-    set_mario_animation(m, MARIO_ANIM_START_CROUCHING);
+    set_mario_animation(m, MARIO_ANIM_CROUCHING);
     return FALSE;
 }
 

@@ -1000,6 +1000,7 @@ s32 act_emerge_from_pipe(struct MarioState *m) {
 }
 
 s32 act_spawn_spin_airborne(struct MarioState *m) {
+	s32 oldActionState;
     // entered water, exit action
     if (m->pos[1] < m->waterLevel - 100) {
         load_level_init_text(0);
@@ -1012,32 +1013,41 @@ s32 act_spawn_spin_airborne(struct MarioState *m) {
     // landed on floor, play spawn land animation
     if (perform_air_step(m, 0.0) == AIR_STEP_LANDED) {
         play_mario_landing_sound(m, SOUND_ACTION_TERRAIN_LANDING);
-        set_mario_action(m, ACT_SPAWN_SPIN_LANDING, 0);
+		oldActionState = m->actionState;
+        set_mario_action(m, ACT_SPAWN_SPIN_LANDING, m->actionState);//preserve actionState
+		m->actionState = oldActionState;
     }
 
     // is 300 units above floor, spin and play woosh sounds
-    if (m->actionState == 0 && m->pos[1] - m->floorHeight > 300.0f) {
+    //if (m->actionState == 0 && m->pos[1] - m->floorHeight > 300.0f) {
         if (set_mario_animation(m, MARIO_ANIM_FORWARD_SPINNING) == 0) { // first anim frame
             play_sound(SOUND_ACTION_SPIN, m->marioObj->header.gfx.cameraToObject);
         }
-    }
+    //}
 
     // under 300 units above floor, enter freefall animation
-    else {
+    /*else {
         m->actionState = 1;
         set_mario_animation(m, MARIO_ANIM_GENERAL_FALL);
-    }
+    }*/
+    m->particleFlags |= PARTICLE_SPARKLES;
 
     return FALSE;
 }
 
 s32 act_spawn_spin_landing(struct MarioState *m) {
-    stop_and_set_height_to_floor(m);
-    set_mario_animation(m, MARIO_ANIM_GENERAL_LAND);
-    if (is_anim_at_end(m)) {
-        load_level_init_text(0);
-        set_mario_action(m, ACT_IDLE, 0);
-    }
+	if (m->actionState == 1) {
+		stop_and_set_height_to_floor(m);
+		set_mario_animation(m, MARIO_ANIM_GENERAL_LAND);
+		if (is_anim_at_end(m)) {
+			load_level_init_text(0);
+			set_mario_action(m, ACT_IDLE, 0);
+		}
+	} else {
+		m->vel[1] = 32.0f;
+		set_mario_action(m, ACT_SPAWN_SPIN_AIRBORNE, 1);
+		m->actionState = 1;
+	}
     return FALSE;
 }
 

@@ -4,19 +4,14 @@
 ALIGNED8 static const Texture mips_seg6_texture_0600FB80[] = {
 #include "actors/mips/mips_eyes.rgba16.inc.c"
 };
-
+#define ShapeColor_newrabbit_base(r,g,b) gdSPDefLights1(r/4,g/4,b/4,r,g,b,0,0,127)
 // 0x06010380
-static const Lights1 mips_seg6_lights_06010380 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010380 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x06010398
-static const Lights1 mips_seg6_lights_06010398 = gdSPDefLights1(
-    0x0f, 0x0d, 0x04,
-    0x27, 0x21, 0x0b, 0x28, 0x28, 0x28
-);
-
+static const Lights1 mips_seg6_lights_06010398 = 
+	ShapeColor_newrabbit_base(20,20,20);
 // 0x060103B0
 static const Vtx mips_seg6_vertex_060103B0[] = {
     {{{    60,     25,    -62}, 0, {  -146,  -1034}, {0x1d, 0x21, 0x8a, 0xff}}},
@@ -132,10 +127,8 @@ const Gfx mips_seg6_dl_060107B8[] = {
 };
 
 // 0x06010820
-static const Lights1 mips_seg6_lights_06010820 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010820 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x06010838
 static const Vtx mips_seg6_vertex_06010838[] = {
@@ -240,16 +233,12 @@ const Gfx mips_seg6_dl_06010C40[] = {
 };
 
 // 0x06010CA0
-static const Lights1 mips_seg6_lights_06010CA0 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010CA0 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06010CB8
-static const Lights1 mips_seg6_lights_06010CB8 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010CB8 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x06010CD0
 static const Vtx mips_seg6_vertex_06010CD0[] = {
@@ -310,22 +299,16 @@ const Gfx mips_seg6_dl_06010E60[] = {
 };
 
 // 0x06010EC0
-static const Lights1 mips_seg6_lights_06010EC0 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010EC0 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06010ED8
-static const Lights1 mips_seg6_lights_06010ED8 = gdSPDefLights1(
-    0x35, 0x38, 0x00,
-    0x85, 0x8e, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010ED8 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06010EF0
-static const Lights1 mips_seg6_lights_06010EF0 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06010EF0 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x06010F08
 static const Vtx mips_seg6_vertex_06010F08[] = {
@@ -394,16 +377,12 @@ const Gfx mips_seg6_dl_060110B0[] = {
 };
 
 // 0x06011110
-static const Lights1 mips_seg6_lights_06011110 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011110 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06011128
-static const Lights1 mips_seg6_lights_06011128 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011128 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x06011140
 static const Vtx mips_seg6_vertex_06011140[] = {
@@ -468,17 +447,13 @@ const Gfx mips_seg6_dl_06011310[] = {
 };
 
 // 0x06011370
-static const Lights1 mips_seg6_lights_06011370 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011370 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06011388
-static const Lights1 mips_seg6_lights_06011388 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
-
+static const Lights1 mips_seg6_lights_06011388 = 
+	ShapeColor_newrabbit_base(255,255,255);
+	
 // 0x060113A0
 static const Vtx mips_seg6_vertex_060113A0[] = {
     {{{    54,      0,    -35}, 0, {  -112,    464}, {0x5e, 0xf7, 0xac, 0xff}}},
@@ -538,16 +513,12 @@ const Gfx mips_seg6_dl_06011520[] = {
 };
 
 // 0x06011580
-static const Lights1 mips_seg6_lights_06011580 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
-
+static const Lights1 mips_seg6_lights_06011580 = 
+	ShapeColor_newrabbit_base(236,62,93);
+	
 // 0x06011598
-static const Lights1 mips_seg6_lights_06011598 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011598 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x060115B0
 static const Vtx mips_seg6_vertex_060115B0[] = {
@@ -612,17 +583,13 @@ const Gfx mips_seg6_dl_06011780[] = {
 };
 
 // 0x060117E0
-static const Lights1 mips_seg6_lights_060117E0 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_060117E0 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x060117F8
-static const Lights1 mips_seg6_lights_060117F8 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
-
+static const Lights1 mips_seg6_lights_060117F8 = 
+	ShapeColor_newrabbit_base(255,255,255);
+	
 // 0x06011810
 static const Vtx mips_seg6_vertex_06011810[] = {
     {{{    49,    -37,     -2}, 0, {  -516,    -60}, {0x40, 0x93, 0x00, 0xff}}},
@@ -682,16 +649,12 @@ const Gfx mips_seg6_dl_06011990[] = {
 };
 
 // 0x060119F0
-static const Lights1 mips_seg6_lights_060119F0 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_060119F0 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06011A08
-static const Lights1 mips_seg6_lights_06011A08 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011A08 = 
+	ShapeColor_newrabbit_base(255,255,255);
 
 // 0x06011A20
 static const Vtx mips_seg6_vertex_06011A20[] = {
@@ -752,16 +715,13 @@ const Gfx mips_seg6_dl_06011BB0[] = {
 };
 
 // 0x06011C10
-static const Lights1 mips_seg6_lights_06011C10 = gdSPDefLights1(
-    0x3c, 0x3c, 0x00,
-    0x96, 0x96, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011C10 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06011C28
-static const Lights1 mips_seg6_lights_06011C28 = gdSPDefLights1(
-    0x66, 0x66, 0x66,
-    0xff, 0xff, 0xff, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011C28 = 
+	ShapeColor_newrabbit_base(255,255,255);
+
 
 // 0x06011C40
 static const Vtx mips_seg6_vertex_06011C40[] = {
@@ -820,11 +780,8 @@ const Gfx mips_seg6_dl_06011DB0[] = {
 };
 
 // 0x06011E10
-static const Lights1 mips_seg6_lights_06011E10 = gdSPDefLights1(
-    0x34, 0x2c, 0x0f,
-    0x82, 0x6e, 0x26, 0x28, 0x28, 0x28
-);
-
+static const Lights1 mips_seg6_lights_06011E10 = 
+	ShapeColor_newrabbit_base(236,62,93);
 // 0x06011E28
 static const Vtx mips_seg6_vertex_06011E28[] = {
     {{{    51,    -16,    -11}, 0, {     0,      0}, {0xf1, 0xb5, 0x9b, 0xff}}},
@@ -855,10 +812,8 @@ const Gfx mips_seg6_dl_06011ED8[] = {
 };
 
 // 0x06011EF8
-static const Lights1 mips_seg6_lights_06011EF8 = gdSPDefLights1(
-    0x34, 0x2c, 0x0f,
-    0x82, 0x6e, 0x26, 0x28, 0x28, 0x28
-);
+static const Lights1 mips_seg6_lights_06011EF8 = 
+	ShapeColor_newrabbit_base(236,62,93);
 
 // 0x06011F10
 static const Vtx mips_seg6_vertex_06011F10[] = {

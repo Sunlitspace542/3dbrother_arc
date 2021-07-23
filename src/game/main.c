@@ -126,7 +126,7 @@ void setup_mesg_queues(void) {
 
 void alloc_pool(void) {
     void *start = (void *) SEG_POOL_START;
-    void *end = (void *) SEG_POOL_END;
+    void *end = (void *) (SEG_POOL_START + POOL_SIZE);
 
     // Detect memory size
     if (does_pool_end_lie_out_of_bounds(end))

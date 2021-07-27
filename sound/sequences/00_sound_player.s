@@ -2201,7 +2201,7 @@ chan_end
 
 .layer_CDC:
 layer_transpose -2
-layer_note1 42, 0x36, 120
+layer_note1 42, 0x53, 105
 layer_end
 
 .sound_mario_ooof:

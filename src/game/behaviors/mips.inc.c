@@ -34,12 +34,12 @@ void bhv_mips_init(void) {
 		}
 	}
 
-    o->oInteractionSubtype = INT_SUBTYPE_HOLDABLE_NPC;
+    //o->oInteractionSubtype = INT_SUBTYPE_HOLDABLE_NPC;   //you can throw MIPS now
 
 #ifndef VERSION_JP
-    o->oGravity = 15.0f;
+    o->oGravity = 1.5f;
 #else
-    o->oGravity = 2.5f;
+    o->oGravity = 1.5f;
 #endif
     o->oFriction = 0.89f;
     o->oBuoyancy = 1.2f;

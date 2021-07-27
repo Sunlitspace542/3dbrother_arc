@@ -781,7 +781,7 @@ const Gfx mips_seg6_dl_06011DB0[] = {
 
 // 0x06011E10
 static const Lights1 mips_seg6_lights_06011E10 = 
-	ShapeColor_newrabbit_base(236,62,93);
+	ShapeColor_newrabbit_base(78,48,80);
 // 0x06011E28
 static const Vtx mips_seg6_vertex_06011E28[] = {
     {{{    51,    -16,    -11}, 0, {     0,      0}, {0xf1, 0xb5, 0x9b, 0xff}}},
@@ -813,7 +813,7 @@ const Gfx mips_seg6_dl_06011ED8[] = {
 
 // 0x06011EF8
 static const Lights1 mips_seg6_lights_06011EF8 = 
-	ShapeColor_newrabbit_base(236,62,93);
+	ShapeColor_newrabbit_base(78,48,80);
 
 // 0x06011F10
 static const Vtx mips_seg6_vertex_06011F10[] = {

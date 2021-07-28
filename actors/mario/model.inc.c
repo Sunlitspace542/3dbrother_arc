@@ -1,7 +1,7 @@
 /********************************************************************************
 						Ultra 64 MARIO Brothers
 
-				Super Mario 64 Luigi Restoration Project
+				       Luigi Restoration Project
 
 			    Mr. Krabs Overdoses on Ketamine and Dies
 				
@@ -9,7 +9,7 @@
 
 				            R.I.P. Bucky.
 
-						   March 5th, 2021.
+						   March 5th, 2021. Thanks Stan.
  ********************************************************************************/
  
 #define G_CC_MARIO_MAPPING G_CC_BLENDRGBFADEA  

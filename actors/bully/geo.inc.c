@@ -1,4 +1,13 @@
 // 0x0C000000
+#include "actors/bully/model.inc.c"
+extern Gfx RCP_otos_basedata0[];
+extern Gfx RCP_otos_basedata1[];
+extern Gfx gfx_otosu_body[];
+extern Gfx RCP_otos_basedata4[];
+extern Gfx RCP_otos_basedata3[];
+extern Gfx gfx_otosu_eye[];
+extern Gfx gfx_big_otosu_body[];
+
 const GeoLayout bully_geo[] = {
    GEO_SHADOW(SHADOW_CIRCLE_4_VERTS, 0xC8, 70),
    GEO_OPEN_NODE(),
@@ -14,7 +23,7 @@ const GeoLayout bully_geo[] = {
                   GEO_OPEN_NODE(),
                      GEO_ANIMATED_PART(LAYER_OPAQUE, 146, 0, 0, NULL),
                      GEO_OPEN_NODE(),
-                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, bully_seg5_dl_05003708),
+                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, RCP_otos_basedata0),
                      GEO_CLOSE_NODE(),
                   GEO_CLOSE_NODE(),
                GEO_CLOSE_NODE(),
@@ -24,7 +33,7 @@ const GeoLayout bully_geo[] = {
                   GEO_OPEN_NODE(),
                      GEO_ANIMATED_PART(LAYER_OPAQUE, 146, 0, 0, NULL),
                      GEO_OPEN_NODE(),
-                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, bully_seg5_dl_050037A0),
+                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, RCP_otos_basedata1),
                      GEO_CLOSE_NODE(),
                   GEO_CLOSE_NODE(),
                GEO_CLOSE_NODE(),
@@ -32,11 +41,11 @@ const GeoLayout bully_geo[] = {
                GEO_OPEN_NODE(),
                   GEO_BILLBOARD(),
                   GEO_OPEN_NODE(),
-                     GEO_DISPLAY_LIST(LAYER_ALPHA, bully_seg5_dl_05003D40),
+                     GEO_DISPLAY_LIST(LAYER_ALPHA, gfx_otosu_body),
                   GEO_CLOSE_NODE(),
                GEO_CLOSE_NODE(),
-               GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, bully_seg5_dl_05000398),
-               GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, bully_seg5_dl_05003FC8),
+               GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, RCP_otos_basedata3),
+               GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, gfx_otosu_eye),
             GEO_CLOSE_NODE(),
          GEO_CLOSE_NODE(),
       GEO_CLOSE_NODE(),
@@ -60,7 +69,7 @@ const GeoLayout bully_boss_geo[] = {
                   GEO_OPEN_NODE(),
                      GEO_ANIMATED_PART(LAYER_OPAQUE, 146, 0, 0, NULL),
                      GEO_OPEN_NODE(),
-                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, bully_seg5_dl_05003708),
+                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, RCP_otos_basedata0),
                      GEO_CLOSE_NODE(),
                   GEO_CLOSE_NODE(),
                GEO_CLOSE_NODE(),
@@ -70,7 +79,7 @@ const GeoLayout bully_boss_geo[] = {
                   GEO_OPEN_NODE(),
                      GEO_ANIMATED_PART(LAYER_OPAQUE, 146, 0, 0, NULL),
                      GEO_OPEN_NODE(),
-                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, bully_seg5_dl_050037A0),
+                        GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, RCP_otos_basedata1),
                      GEO_CLOSE_NODE(),
                   GEO_CLOSE_NODE(),
                GEO_CLOSE_NODE(),
@@ -78,11 +87,11 @@ const GeoLayout bully_boss_geo[] = {
                GEO_OPEN_NODE(),
                   GEO_BILLBOARD(),
                   GEO_OPEN_NODE(),
-                     GEO_DISPLAY_LIST(LAYER_ALPHA, bully_seg5_dl_05003EA8),
+                     GEO_DISPLAY_LIST(LAYER_ALPHA, gfx_big_otosu_body),
                   GEO_CLOSE_NODE(),
                GEO_CLOSE_NODE(),
-               GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, bully_seg5_dl_05000398),
-               GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, bully_seg5_dl_05003FC8),
+               GEO_ANIMATED_PART(LAYER_OPAQUE, 0, 0, 0, RCP_otos_basedata3),
+               GEO_ANIMATED_PART(LAYER_ALPHA, 0, 0, 0, gfx_otosu_eye),
             GEO_CLOSE_NODE(),
          GEO_CLOSE_NODE(),
       GEO_CLOSE_NODE(),

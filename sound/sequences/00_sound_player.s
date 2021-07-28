@@ -2157,7 +2157,7 @@ chan_end
 
 .layer_CA4:
 layer_transpose -2
-layer_note1 44, 0x1e, 110
+layer_note1 41, 0x1e, 144
 layer_end
 
 .sound_mario_wah2:

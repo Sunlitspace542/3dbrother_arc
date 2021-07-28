@@ -15,6 +15,15 @@ DEFINES :=
 # These options can either be set by building with 'make SETTING=value'.
 # 'make clean' may be required first.
 
+# Debugging features
+DEBUG_MODE ?= 0
+$(eval $(call validate-option,DEBUG_MODE,0 1))
+
+ifeq      ($(DEBUG_MODE),1)
+  DEFINES += DEBUG=1
+endif
+
+
 # Build for the N64 (turn this off for ports)
 TARGET_N64 ?= 1
 
@@ -145,6 +154,11 @@ COLOR ?= 1
 # display selected options unless 'make clean' or 'make distclean' is run
 ifeq ($(filter clean distclean,$(MAKECMDGOALS)),)
   $(info ==== Build Options ====)
+  ifeq ($(DEBUG_MODE),1)
+    $(info Debug Mode:     yes)
+  else
+    $(info Debug Mode:     no)
+  endif
   $(info Version:        $(VERSION))
   $(info Microcode:      $(GRUCODE))
   $(info Target:         $(TARGET))

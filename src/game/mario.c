@@ -1252,6 +1252,12 @@ void debug_print_speed_action_normal(struct MarioState *m) {
  * Update the button inputs for Mario.
  */
 void update_mario_button_inputs(struct MarioState *m) {
+    #ifdef DEBUG
+    if (m->action != ACT_DEBUG_FREE_MOVE && m->controller->buttonPressed & L_JPAD) {
+        set_mario_action(m, ACT_DEBUG_FREE_MOVE, 0);
+    }
+    #endif
+
     if (m->controller->buttonPressed & A_BUTTON) {
         m->input |= INPUT_A_PRESSED;
     }

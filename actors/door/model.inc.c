@@ -1,16 +1,15 @@
 // Door
+#define ShapeColor_door_nob(r,g,b) gdSPDefLights1(r/40,g/40,b/40,r,g,b,10,10,10)
 
 // 0x03009CE0
 static const Lights1 door_seg3_lights_03009CE0 = gdSPDefLights1(
     0x3f, 0x3f, 0x3f,
     0xff, 0xff, 0xff, 0x28, 0x28, 0x28
 );
-
 // 0x03009CF8
-static const Lights1 door_seg3_lights_03009CF8 = gdSPDefLights1(
-    0x3f, 0x3f, 0x00,
-    0xff, 0xff, 0x00, 0x28, 0x28, 0x28
-);
+static const Lights1 door_seg3_lights_03009CF8 = 
+	ShapeColor_door_nob(255,255,0);
+
 
 // 0x03009D10
 ALIGNED8 static const Texture door_seg3_texture_03009D10[] = {

@@ -10092,7 +10092,7 @@ BAD_RETURN(s32) cutscene_unused_exit_start(struct Camera *c) {
     Vec3f offset;
     Vec3s marioAngle;
 
-    vec3f_set(offset, 200.f, 300.f, 200.f);
+    vec3f_set(offset, 10.f, 0.f, 1180.f);
     vec3s_set(marioAngle, 0, sMarioCamState->faceAngle[1], 0);
     offset_rotated(c->pos, sMarioCamState->pos, offset, marioAngle);
     set_focus_rel_mario(c, 0.f, 125.f, 0.f, 0);
@@ -10473,7 +10473,8 @@ struct Cutscene sCutsceneEnterPainting[] = {
  * Cutscene that plays when Mario dies and warps back to the castle.
  */
 struct Cutscene sCutsceneDeathExit[] = {
-    { cutscene_exit_painting, 118 },
+    { cutscene_unused_exit_start, 1 },
+    { cutscene_unused_exit_focus_mario, 60 },
     { cutscene_exit_painting_end, 0 }
 };
 

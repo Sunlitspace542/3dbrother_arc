@@ -1704,17 +1704,18 @@ s32 act_death_exit_land(struct MarioState *m) {
     apply_landing_accel(m, 0.9f);
     play_mario_heavy_landing_sound_once(m, SOUND_ACTION_TERRAIN_BODY_HIT_GROUND);
 
-    animFrame = set_mario_animation(m, MARIO_ANIM_FALL_OVER_BACKWARDS);
+    animFrame = set_mario_animation(m, MARIO_ANIM_LAND_ON_STOMACH);
 
-    if (animFrame == 54) {
-        play_sound(SOUND_MARIO_MAMA_MIA, m->marioObj->header.gfx.cameraToObject);
-    }
+    /*if (animFrame == 54) {
+        play_sound(SOUND_MARIO_HOOHOO, m->marioObj->header.gfx.cameraToObject);
+    }*/
     if (animFrame == 68) {
         play_mario_landing_sound(m, SOUND_ACTION_TERRAIN_LANDING);
     }
 
     if (is_anim_at_end(m)) {
         set_mario_action(m, ACT_IDLE, 0);
+        m->faceAngle[1] += 0x8000;
     }
 
     return FALSE;

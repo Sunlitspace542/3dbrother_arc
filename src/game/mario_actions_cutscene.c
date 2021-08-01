@@ -1168,12 +1168,12 @@ s32 act_exit_land_save_dialog(struct MarioState *m) {
 }
 
 s32 act_death_exit(struct MarioState *m) {
-    if (15 < m->actionTimer++
-        && launch_mario_until_land(m, ACT_DEATH_EXIT_LAND, MARIO_ANIM_GENERAL_FALL, -32.0f)) {
+    if (26 < m->actionTimer++
+        && launch_mario_until_land(m, ACT_DEATH_EXIT_LAND, MARIO_ANIM_LAND_ON_STOMACH, -32.0f)) {
 #ifdef VERSION_JP
         play_sound(SOUND_MARIO_OOOF, m->marioObj->header.gfx.cameraToObject);
 #else
-        play_sound(SOUND_MARIO_OOOF2, m->marioObj->header.gfx.cameraToObject);
+        play_sound(SOUND_MARIO_HOOHOO, m->marioObj->header.gfx.cameraToObject);
 #endif
 #ifdef VERSION_SH
         queue_rumble_data(5, 80);
@@ -1184,6 +1184,7 @@ s32 act_death_exit(struct MarioState *m) {
     }
     // one unit of health
     m->health = 0x0100;
+    m->marioObj->header.gfx.angle[1] += 0x8000;
     return FALSE;
 }
 
@@ -1204,7 +1205,7 @@ s32 act_unused_death_exit(struct MarioState *m) {
 }
 
 s32 act_falling_death_exit(struct MarioState *m) {
-    if (launch_mario_until_land(m, ACT_DEATH_EXIT_LAND, MARIO_ANIM_GENERAL_FALL, 0.0f)) {
+     if (launch_mario_until_land(m, ACT_DEATH_EXIT_LAND, MARIO_ANIM_GENERAL_FALL, 0.0f)) {
 #ifdef VERSION_JP
         play_sound(SOUND_MARIO_OOOF, m->marioObj->header.gfx.cameraToObject);
 #else

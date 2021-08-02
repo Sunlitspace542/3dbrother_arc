@@ -2099,9 +2099,9 @@ s16 update_default_camera(struct Camera *c) {
     // Determine how fast to rotate the camera
     if (sCSideButtonYaw == 0) {
         if (c->mode == CAMERA_MODE_FREE_ROAM) {
-            nextYawVel = 0xC0;
+            nextYawVel = 0x35;
         } else {
-            nextYawVel = 0x100;
+            nextYawVel = 0x35;
         }
         if ((gPlayer1Controller->stickX != 0.f || gPlayer1Controller->stickY != 0.f) != 0) {
             nextYawVel = 0x20;

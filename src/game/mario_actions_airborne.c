@@ -1014,6 +1014,81 @@ s32 act_burning_jump(struct MarioState *m) {
     return FALSE;
 }
 
+s32 act_squat_kicking(struct MarioState *m) {
+    if (m->actionState == 0) {
+	   m->forwardVel += 5.0f;
+	   if (m->vel[1] < 0.0f) {
+		m->vel[1] = 0.0f;	   
+	   }
+	   m->vel[1] += 10.5f;	
+       set_mario_animation(m, MARIO_ANIM_SQUAT_KICK_START);	   
+	   if (is_anim_past_end(m)) {
+        m->actionState = 1;
+    }
+	
+	if (m->marioObj->header.gfx.animInfo.animFrame >= 2 &&  m->marioObj->header.gfx.animInfo.animFrame >= 2) {
+		perform_air_step(m, 0);
+	}}
+    play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
+ if (m->actionState >= 1 ){
+    switch (perform_air_step(m, 0)) {
+        case AIR_STEP_NONE:
+            if (m->actionState == 1) {	
+                set_mario_animation(m, MARIO_ANIM_SQUAT_KICKING);
+				m->flags |= MARIO_KICKING;
+				update_air_without_turn(m);
+				if (is_anim_past_end(m)) {
+                m->actionState = 2;
+			}
+            }
+			if (m->actionState == 2) {
+                set_mario_animation(m, MARIO_ANIM_SQUAT_KICK_END);
+				update_air_without_turn(m);
+            }
+            break;
+
+        case AIR_STEP_LANDED:
+            set_mario_action(m, ACT_BUTT_SLIDE, 0);
+            play_mario_landing_sound(m, SOUND_ACTION_TERRAIN_LANDING);
+            break;
+
+        case AIR_STEP_HIT_WALL:
+		    if (m->actionState == 1) {	
+                set_mario_animation(m, MARIO_ANIM_SQUAT_KICKING);
+				m->flags |= MARIO_KICKING;
+				update_air_without_turn(m);
+				if (is_anim_past_end(m)) {
+                m->actionState = 2;
+			}
+            }
+			if (m->actionState == 2) {
+                set_mario_animation(m, MARIO_ANIM_SQUAT_KICK_END);
+				m->flags |= MARIO_KICKING;
+				update_air_without_turn(m);
+            }
+            mario_set_forward_vel(m, 0.0f);
+            break;
+
+        case AIR_STEP_HIT_LAVA_WALL:
+		    if (m->actionState == 1) {	
+                set_mario_animation(m, MARIO_ANIM_SQUAT_KICKING);
+				m->flags |= MARIO_KICKING;
+				update_air_without_turn(m);
+				if (is_anim_past_end(m)) {
+                m->actionState = 2;
+			}
+            }
+			if (m->actionState == 2) {
+                set_mario_animation(m, MARIO_ANIM_SQUAT_KICK_END);
+				update_air_without_turn(m);
+            }
+            lava_boost_on_wall(m);
+            break;
+    }
+ }
+    return FALSE;
+}
+
 s32 act_burning_fall(struct MarioState *m) {
     mario_set_forward_vel(m, m->forwardVel);
 
@@ -2085,6 +2160,7 @@ s32 mario_execute_airborne_action(struct MarioState *m) {
         case ACT_SOFT_BONK:            cancel = act_soft_bonk(m);            break;
         case ACT_AIR_HIT_WALL:         cancel = act_air_hit_wall(m);         break;
         case ACT_FORWARD_ROLLOUT:      cancel = act_forward_rollout(m);      break;
+        case ACT_SQUAT_KICKING:        cancel = act_squat_kicking(m);        break;
         case ACT_SHOT_FROM_CANNON:     cancel = act_shot_from_cannon(m);     break;
         case ACT_BUTT_SLIDE_AIR:       cancel = act_butt_slide_air(m);       break;
         case ACT_HOLD_BUTT_SLIDE_AIR:  cancel = act_hold_butt_slide_air(m);  break;

@@ -7400,7 +7400,7 @@ chan_end
 layer_call .layer_11E4
 layer_delay 0x12
 layer_transpose 0
-layer_note1 39, 0xc8, 80
+layer_note1 41, 0xc8, 80
 layer_end
 
 .layer_2E34:

@@ -3272,7 +3272,7 @@ chan_setlayer 0, .layer_1344
 chan_end
 
 .layer_1344:
-layer_note1 39, 0x7f, 115
+layer_note1 39, 0x8c, 115
 layer_end
 
 .sound_general_platform:

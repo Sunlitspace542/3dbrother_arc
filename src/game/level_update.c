@@ -1269,7 +1269,7 @@ s32 lvl_init_from_save_file(UNUSED s16 arg0, s32 levelNum) {
 #endif
     sWarpDest.type = WARP_TYPE_NOT_WARPING;
     sDelayedWarpOp = WARP_OP_NONE;
-    gNeverEnteredCastle = !save_file_exists(gCurrSaveFileNum - 1);
+    //gNeverEnteredCastle = !save_file_exists(gCurrSaveFileNum - 1);   //Castle inside music play even if you're save file has 0 stars
 
     gCurrLevelNum = levelNum;
     gCurrCourseNum = COURSE_NONE;

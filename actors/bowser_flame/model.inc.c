@@ -72,6 +72,21 @@ ALIGNED8 static const Texture flame_seg6_texture_0601A000[] = {
 #include "actors/bowser_flame/bowser_flame_13.rgba16.inc.c"
 };
 
+// 0x0601A000
+ALIGNED8 static const Texture flame_seg6_texture_0601A100[] = {
+#include "actors/bowser_flame/bowser_flame_14.rgba16.inc.c"
+};
+
+// 0x0601A000
+ALIGNED8 static const Texture flame_seg6_texture_0601A200[] = {
+#include "actors/bowser_flame/bowser_flame_15.rgba16.inc.c"
+};
+
+// 0x0601A000
+ALIGNED8 static const Texture flame_seg6_texture_0601A300[] = {
+#include "actors/bowser_flame/bowser_flame_16.rgba16.inc.c"
+};
+
 // 0x0601C000
 static const Vtx flame_seg6_vertex_0601C000[] = {
     {{{  -150,    150,      0}, 0, {     0,    992}, {0xff, 0xff, 0xff, 0xff}}},
@@ -277,6 +292,42 @@ const Gfx flame_seg6_dl_0601C928[] = {
     gsSPVertex(flame_seg6_vertex_0601C000, 8, 0),
     gsSPDisplayList(flame_seg6_dl_0601C0B0),
     gsDPLoadTextureBlock((u8*)flame_seg6_texture_0601A000 + 0x1000, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
+    gsSPDisplayList(flame_seg6_dl_0601C0C8),
+    gsSPDisplayList(flame_seg6_dl_0601C0E0),
+    gsSPEndDisplayList(),
+};
+
+// 0x0601C928 - 0x0601C9C8
+const Gfx flame_seg6_dl_0601C930[] = {
+    gsSPDisplayList(flame_seg6_dl_0601C080),
+    gsDPLoadTextureBlock(flame_seg6_texture_0601A100, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
+    gsSPVertex(flame_seg6_vertex_0601C000, 8, 0),
+    gsSPDisplayList(flame_seg6_dl_0601C0B0),
+    gsDPLoadTextureBlock((u8*)flame_seg6_texture_0601A100 + 0x1000, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
+    gsSPDisplayList(flame_seg6_dl_0601C0C8),
+    gsSPDisplayList(flame_seg6_dl_0601C0E0),
+    gsSPEndDisplayList(),
+};
+
+// 0x0601C928 - 0x0601C9C8
+const Gfx flame_seg6_dl_0601C935[] = {
+    gsSPDisplayList(flame_seg6_dl_0601C080),
+    gsDPLoadTextureBlock(flame_seg6_texture_0601A200, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
+    gsSPVertex(flame_seg6_vertex_0601C000, 8, 0),
+    gsSPDisplayList(flame_seg6_dl_0601C0B0),
+    gsDPLoadTextureBlock((u8*)flame_seg6_texture_0601A200 + 0x1000, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
+    gsSPDisplayList(flame_seg6_dl_0601C0C8),
+    gsSPDisplayList(flame_seg6_dl_0601C0E0),
+    gsSPEndDisplayList(),
+};
+
+// 0x0601C928 - 0x0601C9C8
+const Gfx flame_seg6_dl_0601C940[] = {
+    gsSPDisplayList(flame_seg6_dl_0601C080),
+    gsDPLoadTextureBlock(flame_seg6_texture_0601A300, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
+    gsSPVertex(flame_seg6_vertex_0601C000, 8, 0),
+    gsSPDisplayList(flame_seg6_dl_0601C0B0),
+    gsDPLoadTextureBlock((u8*)flame_seg6_texture_0601A300 + 0x1000, G_IM_FMT_RGBA, G_IM_SIZ_16b, 64, 32, 0, G_TX_CLAMP, G_TX_CLAMP, 6, 5, G_TX_NOLOD, G_TX_NOLOD),
     gsSPDisplayList(flame_seg6_dl_0601C0C8),
     gsSPDisplayList(flame_seg6_dl_0601C0E0),
     gsSPEndDisplayList(),

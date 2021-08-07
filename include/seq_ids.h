@@ -44,6 +44,7 @@ enum SeqId {
     SEQ_EVENT_CUTSCENE_LAKITU,        // 0x22 (not in JP)
     SEQ_SUMMARY,                      // 0x23
     SEQ_MEM_ERROR,                    // 0x24
+    SEQ_BOSS_FIGHT,                   // 0x25
     SEQ_COUNT
 };
 

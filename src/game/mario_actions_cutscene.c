@@ -607,7 +607,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                 }
                 break;
 
-            case 42:
+            case 55:
                 play_sound(SOUND_MARIO_HERE_WE_GO, m->marioObj->header.gfx.cameraToObject);
                 break;
 

@@ -3070,38 +3070,8 @@ layer_end
 
 .sound_general_coin_water:
 chan_setbank 9
-chan_setinstr 3
-chan_setenvelope .envelope_3358
-chan_setvibratoextent 12
-chan_setval 25
-chan_call .set_reverb
-chan_setlayer 0, .layer_1242
-chan_setlayer 1, .layer_1254
-chan_setval 1
-chan_call .delay
-chan_setbank 4
-chan_setinstr 6
-chan_setval 1
-chan_call .delay
-chan_setbank 9
-chan_setinstr 3
-chan_setenvelope .envelope_3358
-chan_setval 9
-chan_call .delay
-chan_setbank 4
-chan_setinstr 6
-chan_setval 3
-chan_call .delay
-chan_setbank 9
-chan_setinstr 3
-chan_setenvelope .envelope_3358
-chan_setval 6
-chan_call .delay
-chan_setbank 4
-chan_setinstr 6
-chan_setval 49
-chan_call .delay
-chan_setvibratoextent 0
+chan_setinstr 7
+chan_setlayer 0, .layer_11E4
 chan_end
 
 .layer_1242:

@@ -121,7 +121,7 @@ void print_intro_text(void) {
 #ifdef VERSION_EU
             print_text(20, 20, "START");
 #else
-			print_text_centered (SCREEN_WIDTH / 2, 69, "- PRESS START -");
+			print_text_centered (SCREEN_WIDTH / 2, 70, "- PRESS START -");
 #endif
         }
     }

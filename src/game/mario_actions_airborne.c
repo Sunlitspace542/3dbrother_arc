@@ -1021,7 +1021,8 @@ s32 act_squat_kicking(struct MarioState *m) {
 		m->vel[1] = 0.0f;	   
 	   }
 	   m->vel[1] += 10.5f;	
-       set_mario_animation(m, MARIO_ANIM_SQUAT_KICK_START);	   
+       set_mario_animation(m, MARIO_ANIM_SQUAT_KICK_START);
+       m->marioBodyState->handState = MARIO_HAND_OPEN & MARIO_HAND_RIGHT_OPEN;	   
 	   if (is_anim_past_end(m)) {
         m->actionState = 1;
     }

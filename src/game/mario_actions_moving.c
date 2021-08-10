@@ -563,6 +563,7 @@ void anim_and_audio_for_walk(struct MarioState *m) {
                         }
                         set_mario_anim_with_accel(m, MARIO_ANIM_TIPTOE, val14);
                         play_step_sound(m, 14, 72);
+                        m->marioBodyState->handState = MARIO_HAND_OPEN & MARIO_HAND_RIGHT_OPEN;
 
                         val0C = FALSE;
                     }

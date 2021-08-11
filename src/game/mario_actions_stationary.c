@@ -119,7 +119,7 @@ s32 act_idle(struct MarioState *m) {
         return TRUE;
     }
 
-    if (m->actionState == 3) {
+    if (m->actionState == 4) {
         if ((m->area->terrainType & TERRAIN_MASK) == TERRAIN_SNOW) {
             return set_mario_action(m, ACT_SHIVERING, 0);
         } else {
@@ -142,6 +142,17 @@ s32 act_idle(struct MarioState *m) {
             case 2:
                 set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_CENTER);
                 break;
+                
+            case 3:
+            if (m->actionTimer == 5){
+                set_mario_animation(m, MARIO_ANIM_HAT_WAIT);
+                m->marioBodyState->eyeState = MARIO_EYES_LOOK_UP;
+                m->marioBodyState->handState = MARIO_HAND_OPEN & MARIO_HAND_RIGHT_OPEN;
+            play_anim_sound(m, 1, 41, SOUND_ACTION_PAT_BACK);
+            play_anim_sound(m, 1, 49, SOUND_ACTION_PAT_BACK);
+            play_anim_sound(m, 3, 15, m->terrainSoundAddend + SOUND_ACTION_TERRAIN_BODY_HIT_GROUND);
+            }
+                break;
         }
 
         if (is_anim_at_end(m)) {
@@ -152,14 +163,14 @@ s32 act_idle(struct MarioState *m) {
             // here to make sure that Mario would be able to sleep here,
             // and that he's gone through 10 cycles before sleeping.
             // actionTimer is used to track how many cycles have passed.
-            if (++m->actionState == 3) {
+            if (++m->actionState == 4) {
                 f32 deltaYOfFloorBehindMario = m->pos[1] - find_floor_height_relative_polar(m, -0x8000, 60.0f);
                 if (deltaYOfFloorBehindMario < -24.0f || 24.0f < deltaYOfFloorBehindMario || m->floor->flags & SURFACE_FLAG_DYNAMIC) {
                     m->actionState = 0;
                 } else {
                     // If Mario hasn't turned his head 10 times yet, stay idle instead of going to sleep.
                     m->actionTimer++;
-                    if (m->actionTimer < 10) {
+                    if (m->actionTimer <= 10) {
                         m->actionState = 0;
                     }
                 }

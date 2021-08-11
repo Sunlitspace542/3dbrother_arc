@@ -22,8 +22,8 @@
         ],
         "envelope3": [
             [2, 32700],
-            [1, 32700],
-            [32700, 29430],
+            [205, 29818],
+            [535, 0],
             "hang"
         ],
         "envelope4": [
@@ -104,7 +104,7 @@
         "inst3": {
             "release_rate": 10,
             "envelope": "envelope3",
-            "sound": "48_steel_drum"
+            "sound": "1B_organ_2"
         },
         "inst4": {
             "release_rate": 208,

@@ -647,8 +647,8 @@ s32 act_star_dance(struct MarioState *m) {
     if (m->actionState != 2 && m->actionTimer >= 5 && m->actionTimer < 35) {
         m->marioBodyState->handState = MARIO_HAND_OPEN & MARIO_HAND_RIGHT_OPEN;
     } else if (m->actionState != 2 && m->actionTimer >= 35) {
-        m->marioBodyState->handState = MARIO_HAND_FISTS;
-    } 
+        m->marioBodyState->handState = MARIO_HAND_FISTS;    
+    }
     stop_and_set_height_to_floor(m);
     return FALSE;
 }
@@ -967,7 +967,7 @@ s32 act_warp_door_spawn(struct MarioState *m) {
             set_mario_action(m, ACT_IDLE, 0);
         }
     }
-    set_mario_animation(m, MARIO_ANIM_FIRST_PERSON);
+    set_mario_animation(m, MARIO_ANIM_IDLE_HEAD_LEFT);
     stop_and_set_height_to_floor(m);
     return FALSE;
 }

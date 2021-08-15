@@ -1,0 +1,76 @@
+{
+    "date": "2021-08-07",
+    "sample_bank": "instruments",
+    "envelopes": {
+        "envelope0": [
+            [6, 32700],
+            [298, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope1": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ],
+        "envelope3": [
+            [2, 32700],
+            [205, 0],
+            [1, 0],
+            "hang"
+        ],
+        "envelope4": [
+            [2, 32700],
+            [205, 1651],
+            [211, 0],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 38,
+            "envelope": "envelope4",
+            "sound": "3C_acoustic_guitar"
+        },
+        "inst1": {
+            "release_rate": 42,
+            "envelope": "envelope1",
+            "sound": "14_strings_5"
+        },
+        "inst2": {
+            "release_rate": 208,
+            "envelope": "envelope1",
+            "sound": "16_french_horns"
+        },
+        "inst3": {
+            "release_rate": 10,
+            "envelope": "envelope0",
+            "sound": "26_crystal_rhodes"
+        },
+        "inst4": {
+            "release_rate": 34,
+            "envelope": "envelope3",
+            "sound": "44_grand_piano"
+        },
+        "inst5": {
+            "release_rate": 43,
+            "envelope": "envelope1",
+            "sound": "41_pan_flute"
+        },
+        "inst6": {
+            "release_rate": 208,
+            "envelope": "envelope1",
+            "sound": "16_french_horns"
+        }
+    },
+    "instrument_list": [
+        "inst0",
+        "inst1",
+        "inst2",
+        "inst3",
+        "inst4",
+        "inst5",
+        "inst6"
+    ]
+}

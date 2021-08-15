@@ -45,6 +45,7 @@ enum SeqId {
     SEQ_SUMMARY,                      // 0x23
     SEQ_MEM_ERROR,                    // 0x24
     SEQ_BOSS_FIGHT,                   // 0x25
+    SEQ_SNOW,                          // 0x26
     SEQ_COUNT
 };
 

@@ -37,5 +37,6 @@
     "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]},
     "23_summary": ["26_summary"],
     "24_mem_error": ["23"],
-    "25_boss_fight": ["27_boss_fight"]
+    "25_boss_fight": ["27_boss_fight"],
+    "26_snow": ["28_snow"]
 }

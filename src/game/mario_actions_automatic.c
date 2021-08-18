@@ -228,7 +228,7 @@ s32 act_climbing_wall(struct MarioState *m) {
 					m->vel[1] *= .50f;
 					m->marioObj->header.gfx.animInfo.animAccel = 0x40000;
 				} else {
-					m->vel[1] *= 1.5f;
+					m->vel[1] *= 1.0f;
 					set_mario_animation(m, MARIO_ANIM_CLIMBING_DOWN);
 					m->marioObj->header.gfx.animInfo.animFrame = 0;
 					m->particleFlags |= PARTICLE_DUST;

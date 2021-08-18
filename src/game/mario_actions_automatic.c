@@ -225,8 +225,8 @@ s32 act_climbing_wall(struct MarioState *m) {
 				// set anim speed
 				if (m->controller->stickY > 16.f) {
 					set_mario_animation(m, MARIO_ANIM_CLIMBING);
-					m->vel[1] *= .50f;
-					m->marioObj->header.gfx.animInfo.animAccel = 0x40000;
+					m->vel[1] *= .40f;
+					m->marioObj->header.gfx.animInfo.animAccel = 0x30000;
 				} else {
 					m->vel[1] *= 1.0f;
 					set_mario_animation(m, MARIO_ANIM_CLIMBING_DOWN);

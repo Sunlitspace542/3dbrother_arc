@@ -225,14 +225,14 @@ s32 act_climbing_wall(struct MarioState *m) {
 				// set anim speed
 				if (m->controller->stickY > 16.f) {
 					set_mario_animation(m, MARIO_ANIM_CLIMBING);
-					m->vel[1] *= .75f;
+					m->vel[1] *= .50f;
 					m->marioObj->header.gfx.animInfo.animAccel = 0x40000;
 				} else {
 					m->vel[1] *= 1.5f;
 					set_mario_animation(m, MARIO_ANIM_CLIMBING_DOWN);
 					m->marioObj->header.gfx.animInfo.animFrame = 0;
 					m->particleFlags |= PARTICLE_DUST;
-					
+					play_sound(SOUND_MOVING_TERRAIN_SLIDE, m->marioObj->header.gfx.cameraToObject);
 				}
 			} else { 
 				m->particleFlags &= ~PARTICLE_DUST;
@@ -248,24 +248,24 @@ s32 act_climbing_wall(struct MarioState *m) {
 				if (m->controller->stickX > 16.f) {
 					// going right
 					ang -= 0x2000;
-					xm = (s16)(12.f * sins(ang));
-					ym = (s16)(12.f * coss(ang));
+					xm = (s16)(8.f * sins(ang));
+					ym = (s16)(8.f * coss(ang));
 					// X and Y movement
 					m->vel[0] = xm;
 					m->vel[2] = ym;
 					
 					set_mario_animation(m, MARIO_ANIM_CLIMBING_RIGHT);
-					m->marioObj->header.gfx.animInfo.animAccel = 0x10000 * 12;
+					m->marioObj->header.gfx.animInfo.animAccel = 0x5000 * 12;
 				} else {
 					// going left
 					ang += 0x2000;
-					xm = (s16)(12.f * sins(ang));
-					ym = (s16)(12.f * coss(ang));
+					xm = (s16)(8.f * sins(ang));
+					ym = (s16)(8.f * coss(ang));
 					// X and Y movement
 					m->vel[0] = xm;
 					m->vel[2] = ym;
 					set_mario_animation(m, MARIO_ANIM_CLIMBING_LEFT);
-					m->marioObj->header.gfx.animInfo.animAccel = 0x10000 * 12;
+					m->marioObj->header.gfx.animInfo.animAccel = 0x5000 * 12;
 				}
 			} else { 
 				if (m->marioObj->header.gfx.animInfo.animID == MARIO_ANIM_CLIMBING) 

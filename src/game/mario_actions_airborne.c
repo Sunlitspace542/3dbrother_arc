@@ -367,6 +367,7 @@ void update_flying(struct MarioState *m) {
 
 u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, u32 stepArg) {
     u32 stepResult;
+	s16 wallDYaw;
 
     update_air_without_turn(m);
 
@@ -385,6 +386,13 @@ u32 common_air_action_step(struct MarioState *m, u32 landAction, s32 animation, 
         case AIR_STEP_HIT_WALL:
             set_mario_animation(m, animation);
 
+			if (m->wall) {
+				if (m->wall->type == SURFACE_CLIMBABLE_WALL) {
+					wallDYaw = atan2s(m->wall->normal.z, m->wall->normal.x);
+					m->faceAngle[1] = wallDYaw;
+					return set_mario_action(m, ACT_CLIMBING_WALL, 0);
+				}
+			}
             if (m->forwardVel > 16.0f) {
 #ifdef VERSION_SH
                 queue_rumble_data(5, 40);

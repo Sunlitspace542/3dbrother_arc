@@ -551,7 +551,7 @@ chan_setlayer 0, .layer_328
 chan_end
 
 .layer_328:
-layer_note1 39, 0x18, 85
+layer_note1 39, 0x1, 85
 layer_end
 
 .sound_action_step_grass:

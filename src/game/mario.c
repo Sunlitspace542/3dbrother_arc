@@ -964,6 +964,10 @@ static u32 set_mario_action_cutscene(struct MarioState *m, u32 action, UNUSED u3
             mario_set_forward_vel(m, 2.0f);
             break;
 
+        case ACT_SPAWN_SPIN_AIRBORNE_SNOW:
+            mario_set_forward_vel(m, 2.0f);
+            break;
+            
         case ACT_SPECIAL_EXIT_AIRBORNE:
         case ACT_SPECIAL_DEATH_EXIT:
             m->vel[1] = 64.0f;

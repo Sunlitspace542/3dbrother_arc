@@ -3572,6 +3572,10 @@ const BehaviorScript bhvSpinAirborneWarp[] = {
     BREAK(),
 };
 
+const BehaviorScript bhvSpinAirborneWarpSnow[] = {
+    BREAK(),
+};
+
 const BehaviorScript bhvFlyingWarp[] = {
     BREAK(),
 };

@@ -48,6 +48,7 @@
 #define MARIO_SPAWN_LAUNCH_STAR_COLLECT   0x24
 #define MARIO_SPAWN_LAUNCH_DEATH          0x25
 #define MARIO_SPAWN_UNKNOWN_27            0x27
+#define MARIO_SPAWN_SPIN_AIRBORNE_SNOW    0x28
 
 
 struct CreditsEntry

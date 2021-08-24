@@ -309,6 +309,7 @@ extern const BehaviorScript bhvHardAirKnockBackWarp[];
 extern const BehaviorScript bhvSpinAirborneCircleWarp[];
 extern const BehaviorScript bhvDeathWarp[];
 extern const BehaviorScript bhvSpinAirborneWarp[];
+extern const BehaviorScript bhvSpinAirborneWarpSnow[];
 extern const BehaviorScript bhvFlyingWarp[];
 extern const BehaviorScript bhvPaintingStarCollectWarp[];
 extern const BehaviorScript bhvPaintingDeathWarp[];

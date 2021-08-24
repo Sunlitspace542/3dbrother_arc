@@ -1035,6 +1035,41 @@ s32 act_spawn_spin_airborne(struct MarioState *m) {
     return FALSE;
 }
 
+s32 act_spawn_spin_airborne_snow(struct MarioState *m) {
+    s32 oldActionState;
+    // entered water, exit action
+    if (m->pos[1] < m->waterLevel - 100) {
+        load_level_init_text(0);
+        return set_water_plunge_action(m);
+    }
+
+    // updates all velocity variables based on m->forwardVel
+    mario_set_forward_vel(m, m->forwardVel);
+    // landed on floor, play spawn land animation
+    if (perform_air_step(m, 0.0) == AIR_STEP_LANDED) {
+        play_mario_landing_sound(m, SOUND_ACTION_TERRAIN_LANDING);
+        oldActionState = m->actionState;
+        drop_and_set_mario_action(m, ACT_HEAD_STUCK_IN_GROUND, 0);
+        m->actionState = oldActionState;
+    }
+
+    // is 300 units above floor, spin and play woosh sounds
+    //if (m->actionState == 0 && m->pos[1] - m->floorHeight > 300.0f) {
+        if (set_mario_animation(m, MARIO_ANIM_FORWARD_SPINNING) == 0) { // first anim frame
+            play_sound(SOUND_ACTION_SPIN, m->marioObj->header.gfx.cameraToObject);
+        }
+    //}
+
+    // under 300 units above floor, enter freefall animation
+    /*else {
+        m->actionState = 1;
+        set_mario_animation(m, MARIO_ANIM_GENERAL_FALL);
+    }*/
+    m->particleFlags |= PARTICLE_SPARKLES;
+
+    return FALSE;
+}
+
 s32 act_spawn_spin_landing(struct MarioState *m) {
 	if (m->actionState == 1) {
 		stop_and_set_height_to_floor(m);
@@ -2734,6 +2769,7 @@ s32 mario_execute_cutscene_action(struct MarioState *m) {
         case ACT_WARP_DOOR_SPAWN:            cancel = act_warp_door_spawn(m);            break;
         case ACT_EMERGE_FROM_PIPE:           cancel = act_emerge_from_pipe(m);           break;
         case ACT_SPAWN_SPIN_AIRBORNE:        cancel = act_spawn_spin_airborne(m);        break;
+        case ACT_SPAWN_SPIN_AIRBORNE_SNOW:   cancel = act_spawn_spin_airborne_snow(m);   break;
         case ACT_SPAWN_SPIN_LANDING:         cancel = act_spawn_spin_landing(m);         break;
         case ACT_EXIT_AIRBORNE:              cancel = act_exit_airborne(m);              break;
         case ACT_EXIT_LAND_SAVE_DIALOG:      cancel = act_exit_land_save_dialog(m);      break;

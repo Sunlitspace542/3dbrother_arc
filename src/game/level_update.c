@@ -343,6 +343,9 @@ void set_mario_initial_action(struct MarioState *m, u32 spawnType, u32 actionArg
         case MARIO_SPAWN_SPIN_AIRBORNE:
             set_mario_action(m, ACT_SPAWN_SPIN_AIRBORNE, 0);
             break;
+        case MARIO_SPAWN_SPIN_AIRBORNE_SNOW:
+            set_mario_action(m, ACT_SPAWN_SPIN_AIRBORNE_SNOW, 0);
+            break;
         case MARIO_SPAWN_FLYING:
             set_mario_action(m, ACT_FLYING, 2);
             break;
@@ -416,6 +419,9 @@ void init_mario_after_warp(void) {
             play_transition(WARP_TRANSITION_FADE_FROM_COLOR, 0x14, 0xFF, 0xFF, 0xFF);
             break;
         case MARIO_SPAWN_SPIN_AIRBORNE:
+            play_transition(WARP_TRANSITION_FADE_FROM_COLOR, 0x1A, 0xFF, 0xFF, 0xFF);
+            break;
+        case MARIO_SPAWN_SPIN_AIRBORNE_SNOW:
             play_transition(WARP_TRANSITION_FADE_FROM_COLOR, 0x1A, 0xFF, 0xFF, 0xFF);
             break;
         case MARIO_SPAWN_SPIN_AIRBORNE_CIRCLE:

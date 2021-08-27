@@ -242,7 +242,7 @@ s32 act_climbing_wall(struct MarioState *m) {
 					m->marioObj->header.gfx.animInfo.animFrame = 10;
 				}
 			}
-			if (m->controller->stickX > 1.f || m->controller->stickX < -1.f) {
+			if (m->controller->stickX > 16.f || m->controller->stickX < -16.f) {
 				ang = m->faceAngle[1];
 				// Calculate the X and Y would-be movements based on the angle
 				if (m->controller->stickX > 16.f) {

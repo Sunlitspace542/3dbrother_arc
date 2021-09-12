@@ -46,27 +46,27 @@ $(eval $(call validate-option,VERSION,jp us eu sh))
 
 ifeq      ($(VERSION),jp)
   DEFINES   += VERSION_JP=1
-  OPT_FLAGS := -g
-  GRUCODE   ?= f3d_old
+  OPT_FLAGS := -O2
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= true
 else ifeq ($(VERSION),us)
   DEFINES   += VERSION_US=1
-  OPT_FLAGS := -g
-  GRUCODE   ?= f3d_old
+  OPT_FLAGS := -O2
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= true
 else ifeq ($(VERSION),eu)
   DEFINES   += VERSION_EU=1
   OPT_FLAGS := -O2
-  GRUCODE   ?= f3d_new
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= false
 else ifeq ($(VERSION),sh)
   DEFINES   += VERSION_SH=1
   OPT_FLAGS := -O2
-  GRUCODE   ?= f3d_new
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= false
 endif
 
-TARGET := sm64.$(VERSION)
+TARGET := 3dbro.$(VERSION)
 
 
 # GRUCODE - selects which RSP microcode to use.
@@ -133,12 +133,12 @@ endif
 # COMPARE - whether to verify the SHA-1 hash of the ROM after building
 #   1 - verifies the SHA-1 hash of the selected version of the game
 #   0 - does not verify the hash
-COMPARE ?= 1
+COMPARE ?= 0
 $(eval $(call validate-option,COMPARE,0 1))
 
-TARGET_STRING := sm64.$(VERSION).$(GRUCODE)
+TARGET_STRING := 3dbro.$(VERSION).$(GRUCODE)
 # If non-default settings were chosen, disable COMPARE
-ifeq ($(filter $(TARGET_STRING), sm64.jp.f3d_old sm64.us.f3d_old sm64.eu.f3d_new sm64.sh.f3d_new),)
+ifeq ($(filter $(TARGET_STRING), 3dbro.jp.f3d_old 3dbro.us.f3d_old 3dbro.eu.f3d_new 3dbro.sh.f3d_new),)
   COMPARE := 0
 endif
 
